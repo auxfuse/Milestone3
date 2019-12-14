@@ -7,7 +7,10 @@
 
 ***
 
-## ![Oly-Track Logo](static/images/Oly-Track-Logo.png)
+## Welcome to Oly-Track!
+<p align="center">
+    <img src="static/images/Oly-Track-Logo.png" alt="Oly-Track Logo">
+</p>
 
 ***
 
