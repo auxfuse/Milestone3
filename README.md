@@ -7,16 +7,20 @@
 
 ***
 
-## Welcome to Oly-Track! {style=text-align:center}
+## Welcome to Oly-Track!
 
 <p align="center">
-    <img src="static/images/Oly-Track-Logo.png" alt="Oly-Track Logo">
+    <img src="static/images/oly-track-large-logo.png" alt="Oly-Track Logo">
 </p>
 
 ***
 
 ## What does it do and what does it need to fulfill?
-This Milestone project creation is the culmination of learning and study from the eight, ninth and tenth modules of the Full Stack Developer Course, Python Fundamentals, Practical Python and Data Centric Development, to create a fully Mobile Responsive CRUD Web Application. This Application will allow a user to create, read, update and delete Olympic Weightlifting Sessions and is called "Oly-Track" ![Oly-Track Favicon](static/images/Oly-Track-Favicon.png).
+This Milestone project creation is the culmination of learning and study from the eight, ninth and tenth modules of the Full Stack Developer Course, Python Fundamentals, Practical Python and Data Centric Development, to create a fully Mobile Responsive CRUD Web Application. This Application will allow a user to create, read, update and delete Olympic Weightlifting Sessions and is called "Oly-Track".
+
+<p align="center">
+    <img src="static/images/oly-track-short-logo.png" alt="Oly-Track Favicon"
+</p>
 
 ### Functionality of Project
 
