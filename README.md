@@ -7,12 +7,12 @@
 
 ***
 
-## <img src="" alt="logo" title="Oly-Track Logo" width="32" height="32">_Oly-Track_
+## <img src="https://github.com/auxfuse/Milestone3/blob/master/static/images/Oly-Track-Logo.png" alt="logo" title="Oly-Track Logo" width="32" height="32">_Oly-Track_
 
 ***
 
 ## What does it do and what does it need to fulfill?
-This Milestone project creation is the culmination of learning and study from the eight, ninth and tenth modules of the Full Stack Developer Course, Python Fundamentals, Practical Python and Data Centric Development, to create a fully Mobile Responsive CRUD Web Application. This Application will allow a user to create, read, update and delete Olympic Weightlifting Sessions and is called "Oly-Track" <img src="" alt="logo" title="Oly-Track Logo" width="32" height="32">.
+This Milestone project creation is the culmination of learning and study from the eight, ninth and tenth modules of the Full Stack Developer Course, Python Fundamentals, Practical Python and Data Centric Development, to create a fully Mobile Responsive CRUD Web Application. This Application will allow a user to create, read, update and delete Olympic Weightlifting Sessions and is called "Oly-Track" <img src="https://github.com/auxfuse/Milestone3/blob/master/static/images/Oly-Track-Logo.png" alt="logo" title="Oly-Track Logo" width="32" height="32">.
 
 ### Functionality of Project
 
