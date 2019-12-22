@@ -12,8 +12,6 @@ mongo = PyMongo(app)
 
 
 @app.route('/')
-
-
 @app.route('/fundamentals')
 def show_fundamentals():
     return render_template('fundamentals.html', fundamentals=mongo.db.fundamental_movements.find())
