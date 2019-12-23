@@ -1,5 +1,19 @@
-.content {
-    margin-top: 97px;
-    height: 500px;
-    background: aqua;
+@import url("https://fonts.googleapis.com/css?family=Maven+Pro|Roboto&display=swap");
+
+body {
+    font-family: "Maven Pro", sans-serif;
+    font-size: 1rem;
+}
+
+.card {
+    width: 18rem;
+}
+
+.card-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-family: "Roboto", sans-serif;
 }
