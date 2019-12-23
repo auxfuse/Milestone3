@@ -16,88 +16,11 @@
     <link rel="stylesheet" href="{{url_for('static', filename='../css/style.css') }}">
     </head>
     <body>
-        <header>
-        <!-- Nav -->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-custom fixed-top">
-
-                <!-- App Logo -->
-                <a class="navbar-brand" href="index.html">
-                    <img src="" alt="Oly-Track Logo" title="Oly-Track Logo">
-                </a>
-
-                <!-- Toggler Icon on Mobile -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- Navigation Links -->
-                <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav ml-auto uppercase">
-                       <li class="nav-item active">
-                           <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
-                       </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="#">Fundamentals</a>
-                       </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="#">Public Sessions</a>
-                       </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="#">Login</a>
-                       </li>
-                    </ul>
-                </div>
-            </nav>
-        </header>
-
-        <div class="container-fluid content">
+        <div class="container content">
+            <h1>Testing the render</h1>
             {% block content %}
-
             {% endblock %}
         </div>
-
-       <!-- Footer (social media/supporting app texts) -->
-        <footer class="container-fluid">
-            <div class="row">
-                <!-- Declaratory texts re: creator name and educational purposes declaration -->
-                <div class="col-sm-4 created-by-text text-center">
-                    <p>Created by: Anthony O' Brien</p>
-                </div>
-                <div class="col-sm-4 education-declaration-text text-center">
-                    <p>For Educational Purposes Only!</p>
-                </div>
-                <!-- Social Media Links, that when clicked will navigate user to each in a new tab -->
-                <div class="col-sm-4">
-                    <ul class="list-inline social-links">
-                        <li class="list-inline-item">
-                            <a target="_blank" href="">
-                                <i class="far fa-envelope" aria-hidden="true"></i>
-                                <span class="sr-only">Email</span>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a target="_blank" href="https://github.com/auxfuse">
-                                <i class="fab fa-github" aria-hidden="true"></i>
-                                <span class="sr-only">Github</span>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a target="_blank" href="https://www.linkedin.com/in/antobrien/">
-                                <i class="fab fa-linkedin" aria-hidden="true"></i>
-                                <span class="sr-only">LinkedIn</span>
-                            </a>
-                        </li>
-                        <li class="list-inline-item">
-                            <a target="_blank" href="https://www.instagram.com/auxfuse/">
-                                <i class="fab fa-instagram" aria-hidden="true"></i>
-                                <span class="sr-only">Instagram</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
-
     <!-- jQuery & popper.js for interactive elements from Bootstrap such as Navbar expand/collapse and Modal popup etc -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
