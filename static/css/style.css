@@ -6,11 +6,16 @@ body {
 }
 
 .card {
-    width: 18rem;
+    width: 20rem;
+    margin: 10px auto;
+}
+
+.card-body {
+    min-height: 40rem;
 }
 
 .card-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: bold;
 }
 
