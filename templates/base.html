@@ -16,10 +16,39 @@
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css') }}">
     </head>
     <body>
+        <header>
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-custom fixed-top">
+                <!-- Logo -->
+                <a class="navbar-brand" aria-label="Brand Logo & Link to refresh" href="{{url_for('show_fundamentals')}}">
+                    <img src="{{ url_for('static', filename='images/oly-track-short-logo.png') }}" alt="Logo" title="Oly-Track Logo">
+                </a>
+                <!-- Toggler Icon on mobile view -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Navigation links -->
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav ml-auto uppercase">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-label="Home" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-label="Fundamentals" href="{{url_for('show_fundamentals')}}">Fundamentals</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-label="Public Sessions" href="#">Public Sessions</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
         <div class="container content">
             {% block content %}
             {% endblock %}
         </div>
+
     <!-- jQuery & popper.js for interactive elements from Bootstrap such as Navbar expand/collapse and Modal popup etc -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>

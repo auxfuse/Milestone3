@@ -5,6 +5,14 @@ body {
     font-size: 1rem;
 }
 
+.navbar-brand img {
+    height: 50px;
+}
+
+.bg-custom {
+    background-color: #8985e1;
+}
+
 .page-title {
     margin: 90px 0 10px;
 }
