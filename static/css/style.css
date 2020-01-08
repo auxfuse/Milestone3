@@ -5,9 +5,17 @@ body {
     font-size: 1rem;
 }
 
+.page-title {
+    margin: 90px 0 10px;
+}
+
+.page-desc{
+    margin: 10px 0;
+}
+
 .card {
-    width: 20rem;
-    margin: 10px auto;
+    max-width: 20rem;
+    margin: 15px auto;
 }
 
 .card-body {
@@ -17,6 +25,11 @@ body {
 .card-title {
     font-size: 1.8rem;
     font-weight: bold;
+}
+
+.desc-label, .cues-label {
+    font-weight: bold;
+    font-style: italic;
 }
 
 .card-text {
