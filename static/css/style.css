@@ -30,7 +30,7 @@ body {
     margin: 90px 0 10px;
 }
 
-.page-desc{
+.page-desc {
     margin: 10px 0;
 }
 
@@ -58,4 +58,38 @@ body {
 
 .card-text {
     font-family: "Roboto", sans-serif;
+}
+
+/* Footer */
+
+footer {
+    background-color: #aae1d8;
+    min-height: 60px;
+}
+
+.footer-item {
+    font-family: "Maven Pro", sans-serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    list-style-type: none;
+}
+
+/* Media Queries */
+
+@media (min-width: 320px) {
+    /* Footer elements aligned to middle for small screens */
+    .created-by, .social-links {
+        text-align: center;
+    }
+}
+
+@media (min-width: 768px) {
+    /* Footer elements alignment to ensure rule of thirds visually prominent for user */
+    .created-by {
+        text-align: left
+    }
+
+    .social-links {
+        text-align: right
+    }
 }
