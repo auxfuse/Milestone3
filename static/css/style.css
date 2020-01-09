@@ -1,3 +1,6 @@
+/* Global Styles used through application */
+
+    /* Font imports */
 @import url("https://fonts.googleapis.com/css?family=Maven+Pro|Roboto&display=swap");
 
 body {
@@ -5,13 +8,23 @@ body {
     font-size: 1rem;
 }
 
+/* Navbar */
+
+    /* Custom Navbar background color */
+.bg-custom {
+    background-color: #aae1d8;
+}
+
 .navbar-brand img {
     height: 50px;
 }
 
-.bg-custom {
-    background-color: #8985e1;
+    /* Navbar links set to default primary color of black using specificity */
+.navbar-dark .navbar-nav .nav-link {
+    color: #000000;
 }
+
+/* Global page elements such as titles and descriptions etc */
 
 .page-title {
     margin: 90px 0 10px;
@@ -21,6 +34,9 @@ body {
     margin: 10px 0;
 }
 
+/* `Fundamentals` styling */
+
+    /* Cards and associated content styles */
 .card {
     max-width: 20rem;
     margin: 15px auto;
