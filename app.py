@@ -16,9 +16,15 @@ mongo = PyMongo(app)
 def index():
     return render_template('index.html')
 
+
 @app.route('/fundamentals')
 def show_fundamentals():
     return render_template('fundamentals.html', fundamentals=mongo.db.fundamental_movements.find())
+
+
+@app.route('/public-sessions')
+def show_public_sessions():
+    return render_template('public-sessions.html')
 
 
 if __name__ == '__main__':
