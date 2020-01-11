@@ -28,42 +28,6 @@ body {
     color: #545479;
 }
 
-/* Global page elements such as titles and descriptions etc */
-
-.page-title {
-    margin: 90px 0 10px;
-}
-
-.page-desc {
-    margin: 10px 0;
-}
-
-/* `Fundamentals` styling */
-
-    /* Cards and associated content styles */
-.card {
-    max-width: 20rem;
-    margin: 15px auto;
-}
-
-.card-body {
-    min-height: 40rem;
-}
-
-.card-title {
-    font-size: 1.8rem;
-    font-weight: bold;
-}
-
-.desc-label, .cues-label {
-    font-weight: bold;
-    font-style: italic;
-}
-
-.card-text {
-    font-family: "Roboto", sans-serif;
-}
-
 /* Footer */
 
 footer {
@@ -99,6 +63,45 @@ footer .row {
     color: #545479;
     transform: rotate(10deg);
     font-size: 1.5rem;
+}
+
+/* Global page elements such as titles and descriptions etc */
+
+.page-title {
+    margin: 90px 0 10px;
+}
+
+.page-desc {
+    margin: 10px 0;
+}
+
+/* Index page styling */
+
+
+/* Fundamentals page styling */
+
+    /* Cards and associated content styles */
+.card {
+    max-width: 20rem;
+    margin: 15px auto;
+}
+
+.card-body {
+    min-height: 40rem;
+}
+
+.card-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.desc-label, .cues-label {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.card-text {
+    font-family: "Roboto", sans-serif;
 }
 
 /* Media Queries */
