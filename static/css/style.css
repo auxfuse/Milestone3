@@ -3,6 +3,12 @@
     /* Font imports */
 @import url("https://fonts.googleapis.com/css?family=Maven+Pro|Roboto&display=swap");
 
+    /* Margin and Padding reset */
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: "Maven Pro", sans-serif;
     font-size: 1rem;
@@ -67,19 +73,42 @@ footer .row {
 
 /* Global page elements such as titles and descriptions etc */
 
-.page-title {
-    margin: 90px 0 10px;
-}
-
-.page-desc {
-    margin: 10px 0;
+.content {
+    margin: 75px auto 0px;
 }
 
 /* Index page styling */
 
+    /* Removed left and right padding on container element to ensure image extends to edge of view */
+.welcome-landing {
+    padding-right: 0;
+    padding-left: 0;
+    border-bottom: 1px solid rgba(0,0,0, 0.3);
+}
 
+.welcome-img {
+    background: url("../images/rogue-barbell.jpg") center no-repeat;
+    background-size: cover;
+    height: 50vh;
+    position: relative;
+}
+
+.welcome-txt {
+    color: #ddfff2;
+    /* text-shadow to simulate text outline to allow justification against high contrast areas of hero image */
+    text-shadow: -2px 0 #000000, 0 2px #000000, 2px 0 #000000, 0 -2px #000000;
+    top: 10%;
+    /* left and right position properties set to 0 (zero) to ensure text is center aligned */
+    left: 0;
+    right: 0;
+    position: absolute;
+}
 
 /* Fundamentals page styling */
+
+.page-desc {
+    margin: 10px 0;
+}
 
     /* Cards and associated content styles */
 .card {
