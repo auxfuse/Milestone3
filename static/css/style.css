@@ -39,7 +39,7 @@ body {
     /* Card Styles */
 .card {
     max-width: 20rem;
-    margin: 15px auto;
+    margin: 1.5rem;
 }
 
 .card-text {
@@ -132,14 +132,39 @@ footer .row {
     font-family: "Roboto", sans-serif;
 }
 
-#about-logo-image {
-    margin: 0 auto;
-}
-
     /* Home-actions styles */
 #home-actions {
     background: #323232;
     border-top: 1px solid rgba(0,0,0, 0.5);
+}
+
+    /* Justify content center to ensure third card stays center aligned on tablet sizes */
+.home-actions-row {
+    justify-content: center;
+}
+
+.hca-title {
+    font-family: "Maven Pro", sans-serif;
+    font-weight: bold;
+}
+
+    /* Small dividers to break the card info up */
+.hca-title::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 60%;
+    margin: 5px auto;
+    background: #545479;
+}
+
+.hca-p2::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 60%;
+    margin: 5px auto;
+    background: #545479;
 }
 
 
