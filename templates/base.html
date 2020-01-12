@@ -18,7 +18,7 @@
     <body>
         <header>
             <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg navbar-dark bg-custom fixed-top">
+            <nav class="navbar navbar-expand-lg navbar-light bg-custom fixed-top">
                 <!-- Logo -->
                 <a class="navbar-brand" aria-label="Brand Logo & Link to refresh" href="{{url_for('index')}}">
                     <img src="{{ url_for('static', filename='images/oly-track-short-logo.png') }}" alt="Logo" title="Oly-Track Logo">
@@ -96,6 +96,7 @@
     <!-- jQuery & popper.js for interactive elements from Bootstrap such as Navbar expand/collapse and Modal popup etc -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <!-- Custom Javascript file link -->
     <script src="{{ url_for('static', filename='js/javascript.js') }}"></script>
     </body>

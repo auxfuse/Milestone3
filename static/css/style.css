@@ -26,12 +26,16 @@ body {
 }
 
     /* Navbar links set to default primary color of black using specificity */
-.navbar-dark .navbar-nav .nav-link {
+.navbar-light .navbar-nav .nav-link {
     color: #000000;
 }
 
-.navbar-dark .navbar-nav .nav-link:hover {
+.navbar-light .navbar-nav .nav-link:hover {
     color: #545479;
+}
+
+.navbar-light .navbar-toggler {
+    border-color: transparent;
 }
 
 /* Bootstrap Components */
