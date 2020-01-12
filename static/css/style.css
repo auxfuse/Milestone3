@@ -42,9 +42,6 @@ body {
     margin: 15px auto;
 }
 
-
-
-
 /* Footer */
 
 footer {
@@ -127,16 +124,16 @@ footer .row {
 }
 
     /* Fundamentals Cards */
-#fundamentals-card-body {
+.fundamentals-card-body {
     min-height: 40rem;
 }
 
-#movement-title {
+.movement-title {
     font-size: 1.8rem;
     font-weight: bold;
 }
 
-#desc-label, #cues-label {
+.desc-label, .cues-label {
     font-weight: bold;
     font-style: italic;
 }
