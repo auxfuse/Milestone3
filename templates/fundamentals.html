@@ -13,16 +13,14 @@
         </div>
         <div class="row">
             {% for movement in fundamentals %}
-                <div class="col-sm-12 col-md-6 col-lg-4">
-                    <div class="card">
-                        <div class="card-body">
+                    <div class="col-sm-12 col-md-6 col-lg-4 card">
+                        <div class="card-body" id="fundamentals-card-body">
                             <img src="{{ movement.media }}" alt="movement media" class="card-img-top">
-                            <h5 class="card-title text-center">{{ movement.movement_title }}</h5>
-                            <p class="card-text"><span class="desc-label">Desc:</span> {{ movement.movement_desc }}</p>
-                            <p class="card-text"><span class="cues-label">Cues:</span> {{ movement.movement_cues }}</p>
+                            <h5 class="card-title text-center" id="movement-title">{{ movement.movement_title }}</h5>
+                            <p class="card-text"><span id="desc-label">Desc:</span> {{ movement.movement_desc }}</p>
+                            <p class="card-text"><span id="cues-label">Cues:</span> {{ movement.movement_cues }}</p>
                         </div>
                     </div>
-                </div>
             {% endfor %}
         </div>
     </div>

@@ -34,6 +34,17 @@ body {
     color: #545479;
 }
 
+/* Bootstrap Components */
+
+    /* Card Styles */
+.card {
+    max-width: 20rem;
+    margin: 15px auto;
+}
+
+
+
+
 /* Footer */
 
 footer {
@@ -77,6 +88,10 @@ footer .row {
     margin: 75px auto 0;
 }
 
+.card-text {
+    font-family: "Roboto", sans-serif;
+}
+
 /* Index page styling */
 
     /* Removed left and right padding on container element to ensure image extends to edge of view */
@@ -111,28 +126,19 @@ footer .row {
     margin: 10px 0;
 }
 
-    /* Cards and associated content styles */
-.card {
-    max-width: 20rem;
-    margin: 15px auto;
-}
-
-.card-body {
+    /* Fundamentals Cards */
+#fundamentals-card-body {
     min-height: 40rem;
 }
 
-.card-title {
+#movement-title {
     font-size: 1.8rem;
     font-weight: bold;
 }
 
-.desc-label, .cues-label {
+#desc-label, #cues-label {
     font-weight: bold;
     font-style: italic;
-}
-
-.card-text {
-    font-family: "Roboto", sans-serif;
 }
 
 /* Media Queries */
