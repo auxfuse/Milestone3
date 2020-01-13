@@ -91,7 +91,17 @@ The centre of the logo comprises of a deconstructed hexagon which would be simil
 </p>
 
 ##### 4. Geometry
+
+The application is primarily rectangular shaped with subtle rounded edges around elements such as cards, forms and interactive buttons to create a nice flow for the user that doesn't distract. Where possible a quasi-method of rule of thirds was followed for pages and their nested elements. An example of this would be the Home page:
+* The main body of the page is vertically separated into thirds, we have a landing image, an about section detailing the functionality and use of the application, and finally we have a Home actions set of cards, acting as a descriptive point of focus for our user to understand where each avenue will take them.
+* Following from this, the about section is also split in vertical thirds. With a header, descriptive narrative as described above, and closing with the Branding logo of the site.
+* The Descriptive Card Navigation set is split horizontally in thirds, with each third allocated to an associated Card, and on mobile is split vertically due to the cascading column view by the Bootstrap col- size declaration in the code.
+
+This is reciprocated throughout the site to ensure that User isn't overloaded with information and in a hope that the user scans and takes in as much as is humanly possible to follow in line with the rule of thirds methodology.
+
 ##### 5. Wireframing
+
+Wireframing for this project began with Pen and paper as all my projects tend to start, but ultimately Wireframes were created using Balsamiq. Each page or view of the application was rendered as a wireframe in both Small and Medium-Large viewports to show the difference between the aesthetics and showing how the elements per page would react to differing viewport sizes. Each element planned out in this stage has made it into the physical build of the application with not mch deviation occurring from the original wireframe plans.
 
 [Back to Top](#table-of-contents)
 
