@@ -40,7 +40,8 @@
                             <a class="nav-link" aria-label="Public Sessions" href="{{url_for('show_public_sessions')}}">Public Sessions</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" aria-label="Login" href="#">Login</a>
+                            <!-- Using anchor tag to launch modal dialog instead of using href for redirect to new page to ensure nav-link consistent styling -->
+                            <a class="nav-link" data-toggle="modal" data-target="#exampleModal" aria-label="Login">Login</a>
                         </li>
                     </ul>
                 </div>
@@ -92,6 +93,27 @@
             </div>
         </div>
     </footer>
+
+    <!-- Modal for Login -->
+    <div class="modal fade" id="exampleModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Please Login or Register</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <span>Place form elements here......Username & Password</span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success">Register</button>
+                    <button type="button" class="btn btn-primary">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- jQuery & popper.js for interactive elements from Bootstrap such as Navbar expand/collapse and Modal popup etc -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
