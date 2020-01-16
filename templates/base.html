@@ -96,7 +96,7 @@
 
     <!-- Modal for Login -->
     <div class="modal fade" id="exampleModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Please Login or Register</h5>
@@ -105,11 +105,21 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <span>Place form elements here......Username & Password</span>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" id="username" aria-describedby="username" placeholder="Enter Username" required>
+                        <small id="sub-label" class="form-text text-muted">If you do not have a login already use this field to set one!</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" aria-describedby="password" placeholder="Enter Password" required>
+                        <small id="sub-label" class="form-text text-muted">If you do not have a password already use this field to set one!</small>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-success">Register</button>
-                    <button type="button" class="btn btn-primary">Login</button>
+                <div class="modal-footer text-center">
+                    <p class="log-reg-help">If you are new, enter details above and select Register. Otherwise login as normal.</p>
+                    <button type="button" class="btn btn-primary modal-btn">Register</button>
+                    <button type="button" class="btn btn-primary modal-btn">Login</button>
                 </div>
             </div>
         </div>
