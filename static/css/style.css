@@ -259,6 +259,7 @@ footer .row {
 }
 
 @media (min-width: 575px) {
+    /* Max-width of card class to take affect from medium and up device widths */
     .card {
         max-width: 20rem;
     }

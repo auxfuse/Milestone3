@@ -125,6 +125,21 @@ Wireframing for this project began with Pen and paper as all my projects tend to
 
 #### Found Bugs and Fixes:
 
+During manual testing of the application by one of my peers in Slack, it was brought to my attention that the cards on the Fundamentals page were offsetting to left on their mobile device, Samsung Galaxy S9+. As I had access to a Samsung Galaxy S9, I tested the same view on that device and the visual offset was not present. By creating a custom devtools Emulated Device for a Samsung Galaxy S9+ it allowed me to see the visual bug in my manual testing. See next image of the same issue also happening on the Pixel 2 device.
+
+<p align="center">
+    <img src="https://github.com/auxfuse/Milestone3/blob/master/static/images/card-offset.PNG" alt="Oly-Track Logo">
+</p>
+
+Using devtools and some basic element debugging, I was able to determine that the hard-coded `max-width` style property on the card class in my CSS file was the culprit. It wasn't causing any sizing or positional problems on device widths greater than 574px. So instead of removing the max-width property entirely from the CSS file, I decided it was best to remove it from the card class in the main portion of my CSS and add it to a media query from 575px and up device widths:
+
+```css
+@media (min-width: 575px) {
+    .card {
+        max-width: 20rem;
+    }
+}
+```
 
 [Back to Top](#table-of-contents)
 
