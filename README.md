@@ -103,14 +103,36 @@ This is reciprocated throughout the site to ensure that User isn't overloaded wi
 
 Wireframing for this project began with Pen and paper as all my projects tend to start, but ultimately Wireframes were created using Balsamiq. Each page or view of the application was rendered as a wireframe in both Small and Medium-Large viewports to show the difference between the aesthetics and showing how the elements per page would react to differing viewport sizes. Each element planned out in this stage has made it into the physical build of the application with not much deviation occurring from the original wireframe plans.
 
+* Base Template:
+
+The base.html parent template contained all the default components for each page. A head element containing meta characteristics and all relevant links to Title, Frameworks, and custom CSS files for the application. A navbar containing the branding and the associated navigation set whether logged in or otherwise. A main section in the body for content control flow in the form of jinja templating's special delimiters is used to define the block that our child templates can override;
+```html
+{% block content %}
+{& endblock %}
+```
+
+And finally our footer and associated components inside same. These wireframes are very basic but are included to show the default parent template, (skeleton), that each child template inherites from.
+
+<details>
+<summary>Base Template Wireframes</summary>
+
+<p align="center">
+    <img height="350" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Mobile-Template.png" alt="Base template mobile wireframe">
+</p>
+
+<p align="center">
+<img height="350" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Tablet-Desktop-Template.png" alt="Base template tablet-desktop wireframe">
+</p>
+</details>
+
+***
+
 * Home Page:
 
 The Home (Index) Page contained all the major navigation points for both a logged-in or non logged-in user. It contained a hero image to portray the theme and defining nature of the application aswell as a brief description surrounding the app and it's cause for creation which was added post Wireframe creation.
 
 <details>
 <summary>Home Wireframes</summary>
-
-***
 
 <p align="center">
     <img height="350" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Mobile-Home.png" alt="Home page mobile wireframe">
@@ -121,14 +143,14 @@ The Home (Index) Page contained all the major navigation points for both a logge
 </p>
 </details>
 
+***
+
 * Fundamentals Page:
 
-The Fundamentals page was the first page in the application to get and display a collection of data pre-populated in MongoDB. Utilising the cards component in Bootstrap, each card would display a Gif of the movement, title, description and movement cues. These assist in helping the User to get familiar with not only the names of the movement but how the movements should be acted out..
+The Fundamentals page was the first page in the application to get and display a collection of data pre-populated in MongoDB. Utilising the cards component in Bootstrap, each card would display a Gif of the movement, title, description and movement cues. These assist in helping the User to get familiar with not only the names of the movement but how the movements should be acted out. It also acts as a key method in demonstrating one of the core components of the project, `Read`.
 
 <details>
-<summary>Home Wireframes</summary>
-
-***
+<summary>Fundamentals Wireframes</summary>
 
 <p align="center">
     <img height="350" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Mobile-Fundamentals.png" alt="Fundamental page mobile wireframe">
@@ -139,14 +161,14 @@ The Fundamentals page was the first page in the application to get and display a
 </p>
 </details>
 
+***
+
 * Public Sessions Page:
 
 This page in the application is to show those records created by logged in users which have been set to the "Public" option, allowing those not logged in to see the session as a Read action only. 
 
 <details>
-<summary>Home Wireframes</summary>
-
-***
+<summary>Public Sessions Wireframes</summary>
 
 <p align="center">
     <img height="350" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Mobile-PublicSessions.png" alt="Public Sessions page mobile wireframe">
@@ -157,23 +179,67 @@ This page in the application is to show those records created by logged in users
 </p>
 </details>
 
+***
+
 * Login Page:
 
 A simple page as normal inheriting the navbar and footer from the base.html file, but containing a small form group to capture and validate the user's username and password. This page will also feature a small hyperlink so the user can register their details to login to the application.
 
 <details>
-<summary>Home Wireframes</summary>
+<summary>Login Wireframes</summary>
+
+<p align="center">
+    <img height="350" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Mobile-Login.png" alt="Login page mobile wireframe">
+</p>
+
+<p align="center">
+<img height="350" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Tablet-Desktop-Login.png" alt="Login page tablet-desktop wireframe">
+</p>
+</details>
 
 ***
 
+* Registration Page:
+
+As with the Login page, this page is very similar with the only changes being that of language/terminology of some of the text pieces and the removal of the Register link.
+
+<details>
+<summary>Registration Wireframes</summary>
+
 <p align="center">
-    <img height="350" src="" alt="Public Sessions page mobile wireframe">
+    <img height="350" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Mobile-Register.png" alt="Register page mobile wireframe">
 </p>
 
 <p align="center">
-<img height="350" src="" alt="Public Sessions page tablet-desktop wireframe">
+<img height="350" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Tablet-Desktop-Register.png" alt="Register page tablet-desktop wireframe">
 </p>
 </details>
+
+***
+
+* Create Session Page:
+
+Navigation to this page is locked behind login. Once logged it will appear in the nav-items in the navbar. Form elements such as date selectors, dropdowns featuring collections of data to select from, and fields make up the main composition of this portion of the application. This is the `create` section for the application in keeping with the main requirement for this project. 
+
+<details>
+<summary>Create Session Wireframes</summary>
+
+<p align="center">
+    <img height="350" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Mobile-CreateSession.png" alt="Create Session page mobile wireframe">
+</p>
+
+<p align="center">
+<img height="350" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Tablet-Desktop-CreateSession.png" alt="Create Session page tablet-desktop wireframe">
+</p>
+</details>
+
+***
+
+* Edit Session Page:
+
+* My Sessions Page:
+
+
 
 [Back to Top](#table-of-contents)
 
