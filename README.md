@@ -101,7 +101,16 @@ This is reciprocated throughout the site to ensure that User isn't overloaded wi
 
 ##### 5. Wireframing
 
-Wireframing for this project began with Pen and paper as all my projects tend to start, but ultimately Wireframes were created using Balsamiq. Each page or view of the application was rendered as a wireframe in both Small and Medium-Large viewports to show the difference between the aesthetics and showing how the elements per page would react to differing viewport sizes. Each element planned out in this stage has made it into the physical build of the application with not mch deviation occurring from the original wireframe plans.
+Wireframing for this project began with Pen and paper as all my projects tend to start, but ultimately Wireframes were created using Balsamiq. Each page or view of the application was rendered as a wireframe in both Small and Medium-Large viewports to show the difference between the aesthetics and showing how the elements per page would react to differing viewport sizes. Each element planned out in this stage has made it into the physical build of the application with not much deviation occurring from the original wireframe plans.
+
+* Home Page:
+
+The Home (Index) Page contained all the major navigation points for both a logged-in or non logged-in user. It contained a hero image to portray the theme and defining nature of the application aswell as a brief description surrounding the app and it's cause for creation.
+
+<img align="left" width="125" height="250" src="" alt="Home page mobile wireframe">
+<img align="right" width="400" height="250" src="" alt="Home page tablet-desktop wireframe">
+
+
 
 [Back to Top](#table-of-contents)
 
