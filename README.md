@@ -109,7 +109,9 @@ The Home (Index) Page contained all the major navigation points for both a logge
 
 <details>
 <summary>Home Wireframes</summary>
-<br>
+
+***
+
 <p align="center">
     <img height="350" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Mobile-Home.png" alt="Home page mobile wireframe">
 </p>
@@ -123,6 +125,11 @@ The Home (Index) Page contained all the major navigation points for both a logge
 
 The Fundamentals page was the first page in the application to get and display a collection of data pre-populated in MongoDB. Utilising the cards component in Bootstrap, each card would display a Gif of the movement, title, description and movement cues. These assist in helping the User to get familiar with not only the names of the movement but how the movements should be acted out..
 
+<details>
+<summary>Home Wireframes</summary>
+
+***
+
 <p align="center">
     <img height="350" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Mobile-Fundamentals.png" alt="Fundamental page mobile wireframe">
 </p>
@@ -130,10 +137,43 @@ The Fundamentals page was the first page in the application to get and display a
 <p align="center">
 <img height="350" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Tablet-Desktop-Fundamentals.png" alt="Fundamental page tablet-desktop wireframe">
 </p>
+</details>
 
 * Public Sessions Page:
 
+This page in the application is to show those records created by logged in users which have been set to the "Public" option, allowing those not logged in to see the session as a Read action only. 
 
+<details>
+<summary>Home Wireframes</summary>
+
+***
+
+<p align="center">
+    <img height="350" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Mobile-PublicSessions.png" alt="Public Sessions page mobile wireframe">
+</p>
+
+<p align="center">
+<img height="350" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Tablet-Desktop-PublicSessions.png" alt="Public Sessions page tablet-desktop wireframe">
+</p>
+</details>
+
+* Login Page:
+
+A simple page as normal inheriting the navbar and footer from the base.html file, but containing a small form group to capture and validate the user's username and password. This page will also feature a small hyperlink so the user can register their details to login to the application.
+
+<details>
+<summary>Home Wireframes</summary>
+
+***
+
+<p align="center">
+    <img height="350" src="" alt="Public Sessions page mobile wireframe">
+</p>
+
+<p align="center">
+<img height="350" src="" alt="Public Sessions page tablet-desktop wireframe">
+</p>
+</details>
 
 [Back to Top](#table-of-contents)
 
