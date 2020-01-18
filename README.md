@@ -107,8 +107,8 @@ Wireframing for this project began with Pen and paper as all my projects tend to
 
 The Home (Index) Page contained all the major navigation points for both a logged-in or non logged-in user. It contained a hero image to portray the theme and defining nature of the application aswell as a brief description surrounding the app and it's cause for creation.
 
-<img align="left" width="125" height="250" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Mobile-Home.png" alt="Home page mobile wireframe">
-<img align="right" width="400" height="250" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Tablet-Desktop-Home.png" alt="Home page tablet-desktop wireframe">
+<img align="left" height="250" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Mobile-Home.png" alt="Home page mobile wireframe">
+<img align="right" height="250" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Tablet-Desktop-Home.png" alt="Home page tablet-desktop wireframe">
 
 
 
