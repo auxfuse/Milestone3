@@ -105,8 +105,11 @@ Wireframing for this project began with Pen and paper as all my projects tend to
 
 * Home Page:
 
-The Home (Index) Page contained all the major navigation points for both a logged-in or non logged-in user. It contained a hero image to portray the theme and defining nature of the application aswell as a brief description surrounding the app and it's cause for creation.
+The Home (Index) Page contained all the major navigation points for both a logged-in or non logged-in user. It contained a hero image to portray the theme and defining nature of the application aswell as a brief description surrounding the app and it's cause for creation which was added post Wireframe creation.
 
+<details>
+<summary>Home Wireframes</summary>
+<br>
 <p align="center">
     <img height="350" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Mobile-Home.png" alt="Home page mobile wireframe">
 </p>
@@ -114,8 +117,23 @@ The Home (Index) Page contained all the major navigation points for both a logge
 <p align="center">
 <img height="350" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Tablet-Desktop-Home.png" alt="Home page tablet-desktop wireframe">
 </p>
+</details>
 
 * Fundamentals Page:
+
+The Fundamentals page was the first page in the application to get and display a collection of data pre-populated in MongoDB. Utilising the cards component in Bootstrap, each card would display a Gif of the movement, title, description and movement cues. These assist in helping the User to get familiar with not only the names of the movement but how the movements should be acted out..
+
+<p align="center">
+    <img height="350" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Mobile-Fundamentals.png" alt="Fundamental page mobile wireframe">
+</p>
+
+<p align="center">
+<img height="350" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Tablet-Desktop-Fundamentals.png" alt="Fundamental page tablet-desktop wireframe">
+</p>
+
+* Public Sessions Page:
+
+
 
 [Back to Top](#table-of-contents)
 
