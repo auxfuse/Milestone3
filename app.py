@@ -14,7 +14,7 @@ app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
-
+users = mongo.db.users
 
 @app.route('/')
 @app.route('/index')
@@ -38,9 +38,20 @@ def login():
     return render_template('login.html', title='Login', form=login_form)
 
 
-@app.route('/register')
+@app.route('/register', methods=['GET', 'POST'])
 def register():
     register_form = RegisterForm()
+    if register_form.validate_on_submit():
+        found_username = users.find_one({'username': request.form['username']})
+
+        if not found_username:
+            users.insert_one({'username': request.form['username'],
+                              'password': request.form['password']})
+            return redirect(url_for('index'))
+        else:
+            flash(f'Duplicate value detected for username.', 'danger')
+            return redirect(url_for('register'))
+
     return render_template('register.html', title='Register', form=register_form)
 
 

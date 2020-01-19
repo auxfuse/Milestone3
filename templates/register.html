@@ -21,6 +21,11 @@
         </div>
 
         <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+
+                </div>
+            </div>
             <div class="row form-register-row">
                 <div class="col-sm-12">
                     <h2 class="register-header text-center">Register</h2>
@@ -31,6 +36,15 @@
                         <div class="form-group">
                             {{ form.username.label(class="form-control-label") }}
                             {{ form.username(class="form-control") }}
+                            {% with alerts = get_flashed_messages(with_categories=true) %}
+                                {% if alerts %}
+                                    {% for category, alert in alerts %}
+                                        <div class="alert alert-{{ category }}">
+                                            {{ alert }}
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}
                         </div>
                         <div class="form-group">
                             {{ form.password.label(class="form-control-label") }}
