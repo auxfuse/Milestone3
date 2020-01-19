@@ -1,10 +1,51 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="container content">
-        <div class="row">
-            <div class="col-12">
-                <h1>Register</h1>
+    <section class="content" id="register">
+        <div class="container register-detail">
+            <div class="row">
+                <div class="col-sm-12 about-title text-center">
+                    <h2>Register for Oly-Track</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 register-desc text-center">
+                    <p>Registering for Oly-Track is essential in unlocking the core functionality of this application. Oly-Track can be used by an un-registered and un-logged user but those users will only be able to see any Sessions made public by a logged-in user.</p>
+                    <p>Take the next step in propelling your training into the Digital age. Record your sessions with agile-ease on one device, your smartphone, with the added caveat that i you won't need to download any specific app from the app store, as this application is completely browser based but mobile first in design. Register below!</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center" id="about-logo-image">
+                    <img class="img-fluid" src="{{ url_for('static', filename='images/oly-track-large-logo.png') }}" alt="Large Brand Logo">
+                </div>
             </div>
         </div>
-    </div>
+
+        <div class="container">
+            <div class="row form-register-row">
+                <div class="col-sm-12">
+                    <h2 class="register-header text-center">Register</h2>
+                    <form id="register-login" action="" method="POST">
+                        <!-- hidden_tag needed to protect against CSRF (cross-site request forgery) attacks in conjunction with our secret key -->
+                        {{ form.hidden_tag() }}
+                        <!-- Form elements rendered -->
+                        <div class="form-group">
+                            {{ form.username.label(class="form-control-label") }}
+                            {{ form.username(class="form-control") }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.password.label(class="form-control-label") }}
+                            {{ form.password(class="form-control") }}
+                        </div>
+                        <div class="form-group">
+                            {{ form.password_check.label(class="form-control-label") }}
+                            {{ form.password_check(class="form-control") }}
+                        </div>
+                        <div class="form-group text-center">
+                            {{ form.submit(class="btn btn-primary") }}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

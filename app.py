@@ -3,7 +3,7 @@ from os import path
 from flask import Flask, render_template, redirect, request, url_for, session, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from forms import LoginForm
+from forms import LoginForm, RegisterForm
 if path.exists("env.py"):
     import env
 
@@ -40,7 +40,8 @@ def login():
 
 @app.route('/register')
 def register():
-    return render_template('register.html')
+    register_form = RegisterForm()
+    return render_template('register.html', title='Register', form=register_form)
 
 
 @app.route('/create-session')

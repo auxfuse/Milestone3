@@ -20,11 +20,11 @@
             </div>
         </div>
 
-        <div class="container form-container">
-            <div class="row">
+        <div class="container">
+            <div class="row form-login-row">
                 <div class="col-sm-12">
-                    <h2 class="contact-header text-center">Login</h2>
-                    <form action="" method="POST">
+                    <h2 class="login-header text-center">Login</h2>
+                    <form id="form-login" action="" method="POST">
                         <!-- hidden_tag needed to protect against CSRF (cross-site request forgery) attacks in conjunction with our secret key -->
                         {{ form.hidden_tag() }}
                         <!-- Form elements rendered -->
