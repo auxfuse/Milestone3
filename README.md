@@ -237,17 +237,17 @@ Navigation to this page is locked behind login. Once logged it will appear in th
 
 * My Sessions Page:
 
-A filtered list per User, with navigation to this locked behind login. Each record on this list will show a top level set of information on tablet-desktop, with a little bit less on mobile to save vital visual real-estate. A button per record to navigate the user to the Session page.
+A filtered list per User, with navigation to this locked behind login. Each record on this list will show a top level set of information on tablet-desktop, with a little bit less on mobile to save vital visual real-estate. A button per record to navigate the user to the Session page to view all the details of the session.
 
 <details>
-<summary>Edit Session Wireframes</summary>
+<summary>My Sessions Wireframes</summary>
 
 <p align="center">
-    <img height="350" src="" alt="My Sessions page mobile wireframe">
+    <img height="350" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Mobile-MySessions.png" alt="My Sessions page mobile wireframe">
 </p>
 
 <p align="center">
-<img height="350" src="" alt="My Sessions page tablet-desktop wireframe">
+<img height="350" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Tablet-Desktop-MySessions.png" alt="My Sessions page tablet-desktop wireframe">
 </p>
 </details>
 
@@ -255,7 +255,21 @@ A filtered list per User, with navigation to this locked behind login. Each reco
 
 * Session View Page:
 
+This page is to detail to the user a full view of the Session to the user and navigation to this is locked behind login. Two buttons exist on this page to act as two major call-to-actions for the record. One to navigate the user to the Edit Sessions page. And the other button acts as the only Delete functionality in the application, fulfilling the `delete` portion of the CRUD functionality for the project.
 
+<details>
+<summary>Session View Wireframes</summary>
+
+<p align="center">
+    <img height="350" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Mobile-SessionView.png" alt="Session View page mobile wireframe">
+</p>
+
+<p align="center">
+<img height="350" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Tablet-Desktop-SessionView.png" alt="Session View page tablet-desktop wireframe">
+</p>
+</details>
+
+***
 
 * Edit Session Page:
 
