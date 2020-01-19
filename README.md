@@ -235,11 +235,45 @@ Navigation to this page is locked behind login. Once logged it will appear in th
 
 ***
 
-* Edit Session Page:
-
 * My Sessions Page:
 
+A filtered list per User, with navigation to this locked behind login. Each record on this list will show a top level set of information on tablet-desktop, with a little bit less on mobile to save vital visual real-estate. A button per record to navigate the user to the Session page.
 
+<details>
+<summary>Edit Session Wireframes</summary>
+
+<p align="center">
+    <img height="350" src="" alt="My Sessions page mobile wireframe">
+</p>
+
+<p align="center">
+<img height="350" src="" alt="My Sessions page tablet-desktop wireframe">
+</p>
+</details>
+
+***
+
+* Session View Page:
+
+
+
+* Edit Session Page:
+
+Navigation to this page can only be instantiated by the user once they view there own session. This layout provides the `update` portion of the CRUD functionality for which the projects main requirements are set for. All fields are editable by the user, with a button to update the session. Once updated, the user will be redirected back to their appropriate `My Sessions` page.
+
+<details>
+<summary>Edit Session Wireframes</summary>
+
+<p align="center">
+    <img height="350" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Mobile-EditSession.png" alt="Edit Session page mobile wireframe">
+</p>
+
+<p align="center">
+<img height="350" src="https://github.com/auxfuse/Milestone3/blob/master/static/wireframes/Ms3-Tablet-Desktop-EditSession.png" alt="Edit Session page tablet-desktop wireframe">
+</p>
+</details>
+
+***
 
 [Back to Top](#table-of-contents)
 
