@@ -3,7 +3,7 @@ from os import path
 from flask import Flask, render_template, redirect, request, url_for, session, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
-from werkzeug.security import generate_password_hash, check_password_hash
+from forms import LoginForm
 if path.exists("env.py"):
     import env
 
@@ -34,7 +34,8 @@ def show_public_sessions():
 
 @app.route('/login')
 def login():
-    return render_template('login.html')
+    login_form = LoginForm()
+    return render_template('login.html', title='Login', form=login_form)
 
 
 @app.route('/register')

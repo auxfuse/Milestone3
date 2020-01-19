@@ -29,7 +29,7 @@
                 </button>
                 <!-- Navigation links -->
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    {% if user-logged %}
+{#                    {% if user-logged %}#}
                         <ul class="navbar-nav ml-auto uppercase">
                             <li class="nav-item">
                                 <a class="nav-link" aria-label="Home" href="{{url_for('index')}}">Home</a>
@@ -44,27 +44,28 @@
                                 <a class="nav-link" aria-label="Login" href="{{url_for('login')}}">Login</a>
                             </li>
                         </ul>
-                    {% else %}
-                        <ul class="navbar-nav ml-auto uppercase">
-                            <li class="nav-item">
-                                <a class="nav-link" aria-label="Home" href="{{url_for('index')}}">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" aria-label="Fundamentals" href="{{url_for('show_fundamentals')}}">Fundamentals</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" aria-label="Public Sessions" href="{{url_for('show_public_sessions')}}">Public Sessions</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" aria-label="Create Session" href="#">Create Session</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" aria-label="My Sessions" href="#">My Sessions</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" aria-label="Logout" href="#">Logout</a>
-                            </li>
-                        </ul>
+{#                    {% else %}#}
+{#                        <ul class="navbar-nav ml-auto uppercase">#}
+{#                            <li class="nav-item">#}
+{#                                <a class="nav-link" aria-label="Home" href="{{url_for('index')}}">Home</a>#}
+{#                            </li>#}
+{#                            <li class="nav-item">#}
+{#                                <a class="nav-link" aria-label="Fundamentals" href="{{url_for('show_fundamentals')}}">Fundamentals</a>#}
+{#                            </li>#}
+{#                            <li class="nav-item">#}
+{#                                <a class="nav-link" aria-label="Public Sessions" href="{{url_for('show_public_sessions')}}">Public Sessions</a>#}
+{#                            </li>#}
+{#                            <li class="nav-item">#}
+{#                                <a class="nav-link" aria-label="Create Session" href="#">Create Session</a>#}
+{#                            </li>#}
+{#                            <li class="nav-item">#}
+{#                                <a class="nav-link" aria-label="My Sessions" href="#">My Sessions</a>#}
+{#                            </li>#}
+{#                            <li class="nav-item">#}
+{#                                <a class="nav-link" aria-label="Logout" href="#">Logout</a>#}
+{#                            </li>#}
+{#                        </ul>#}
+{#                    {% endif %}#}
                 </div>
             </nav>
         </header>

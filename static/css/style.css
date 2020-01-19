@@ -114,7 +114,7 @@ footer .row {
     margin: 75px auto 0;
 }
 
-/* Index (Home) page styling */
+/* Index (Home) */
 
     /* Welcome Landing Image */
     /* Removed left and right padding on container element to ensure image extends to edge of view */
@@ -217,7 +217,7 @@ footer .row {
     border: 1px solid #7777ab;
 }
 
-/* Fundamentals page styling */
+/* Fundamentals */
 
 .page-desc {
     margin: 10px 0;
@@ -238,7 +238,9 @@ footer .row {
     font-style: italic;
 }
 
-/**/
+/* Public Sessions */
+
+/* Login */
 
 /* Media Queries */
 
