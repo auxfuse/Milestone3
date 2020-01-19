@@ -30,6 +30,36 @@ def show_public_sessions():
     return render_template('public-sessions.html')
 
 
+@app.route('/login')
+def login():
+    return render_template('login.html')
+
+
+@app.route('/register')
+def register():
+    return render_template('register.html')
+
+
+@app.route('/create-session')
+def create_session():
+    return render_template('create-session.html')
+
+
+@app.route('/my-sessions')
+def my_sessions():
+    return render_template('my-sessions.html')
+
+
+@app.route('/session-view')
+def session_view():
+    return render_template('session-view.html')
+
+
+@app.route('/edit-session')
+def edit_session():
+    return render_template('edit-session.html')
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
             port=os.environ.get('PORT'),

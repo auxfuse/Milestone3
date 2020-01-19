@@ -1,10 +1,45 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="container content">
-        <div class="row">
-            <div class="col-12">
-                <h1>Login</h1>
+    <section class="content" id="login">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 about-title text-center">
+                    <h2>Logging into Oly-Track</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 login-desc text-center">
+                    <p>Logging into Oly-track allows you, the User, to create your sessions on the fly. It is easy to forget a pen and a journal, but no so easily your phone. Each session created is a session tracked, so tracking your sessions this application allows you the freedom to access your past sessions anywhere...(as long as you have a device to login).</p>
+                    <p>Each training session you do will also have coach feedback, so each session documented in the application has an input for you to detail that information so you don't have to try and remember in a pinch what was said possibly weeks ago. Tracking Sessions has never been easier! Welcome to Oly-Track!</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center" id="about-logo-image">
+                    <img class="img-fluid" src="{{ url_for('static', filename='images/oly-track-large-logo.png') }}" alt="Large Brand Logo">
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section id="form-section">
+        <div class="container">
+            <div class="row">
+                <h2 class="col-sm-12 contact-header text-center">Login</h2>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <form action="" method="POST">
+                        <input type="text" name="username" id="username" class="form-control username" placeholder="Enter Username" required="">
+                        <input type="password" name="password" id="password" class="form-control password" placeholder="Enter Password" required="">
+                        <input type="submit" class="btn btn-primary" value="Login">
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <a href="{{url_for('register')}}">No Login? Register Here.</a>
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

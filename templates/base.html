@@ -29,21 +29,42 @@
                 </button>
                 <!-- Navigation links -->
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                    <ul class="navbar-nav ml-auto uppercase">
-                        <li class="nav-item">
-                            <a class="nav-link" aria-label="Home" href="{{url_for('index')}}">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" aria-label="Fundamentals" href="{{url_for('show_fundamentals')}}">Fundamentals</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" aria-label="Public Sessions" href="{{url_for('show_public_sessions')}}">Public Sessions</a>
-                        </li>
-                        <li class="nav-item">
-                            <!-- Using anchor tag to launch modal dialog instead of using href for redirect to new page to ensure nav-link consistent styling -->
-                            <a class="nav-link" data-toggle="modal" data-target="#exampleModal" aria-label="Login">Login</a>
-                        </li>
-                    </ul>
+                    {% if user-logged %}
+                        <ul class="navbar-nav ml-auto uppercase">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-label="Home" href="{{url_for('index')}}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-label="Fundamentals" href="{{url_for('show_fundamentals')}}">Fundamentals</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-label="Public Sessions" href="{{url_for('show_public_sessions')}}">Public Sessions</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-label="Login" href="{{url_for('login')}}">Login</a>
+                            </li>
+                        </ul>
+                    {% else %}
+                        <ul class="navbar-nav ml-auto uppercase">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-label="Home" href="{{url_for('index')}}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-label="Fundamentals" href="{{url_for('show_fundamentals')}}">Fundamentals</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-label="Public Sessions" href="{{url_for('show_public_sessions')}}">Public Sessions</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-label="Create Session" href="#">Create Session</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-label="My Sessions" href="#">My Sessions</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-label="Logout" href="#">Logout</a>
+                            </li>
+                        </ul>
                 </div>
             </nav>
         </header>
@@ -93,37 +114,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Modal for Login -->
-    <div class="modal fade" id="exampleModal" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Please Login or Register</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="username">Username</label>
-                        <input type="text" class="form-control" id="username" aria-describedby="username" placeholder="Enter Username" required>
-                        <small id="sub-label" class="form-text text-muted">If you do not have a login already use this field to set one!</small>
-                    </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" aria-describedby="password" placeholder="Enter Password" required>
-                        <small id="sub-label" class="form-text text-muted">If you do not have a password already use this field to set one!</small>
-                    </div>
-                </div>
-                <div class="modal-footer text-center">
-                    <p class="log-reg-help">If you are new, enter details above and select Register. Otherwise login as normal.</p>
-                    <button type="button" class="btn btn-primary modal-btn">Register</button>
-                    <button type="button" class="btn btn-primary modal-btn">Login</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- jQuery & popper.js for interactive elements from Bootstrap such as Navbar expand/collapse and Modal popup etc -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
