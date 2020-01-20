@@ -29,33 +29,73 @@
             <div class="row form-register-row">
                 <div class="col-sm-12">
                     <h2 class="register-header text-center">Register</h2>
+                    <div class="text-center">
+                        {% with alerts = get_flashed_messages(with_categories=true) %}
+                            {% if alerts %}
+                                {% for category, alert in alerts %}
+                                    <div class="alert alert-{{ category }}">
+                                        {{ alert }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                    </div>
                     <form id="register-login" action="" method="POST">
                         <!-- hidden_tag needed to protect against CSRF (cross-site request forgery) attacks in conjunction with our secret key -->
                         {{ form.hidden_tag() }}
-                        <!-- Form elements rendered -->
+
                         <div class="form-group">
-                            <!-- Username label and associated field -->
+                            <!-- Username label and associated field. With error capturing and displaying. -->
                             {{ form.username.label(class="form-control-label") }}
-                            {{ form.username(class="form-control") }}
-                            {% with alerts = get_flashed_messages(with_categories=true) %}
-                                {% if alerts %}
-                                    {% for category, alert in alerts %}
-                                        <div class="alert alert-{{ category }}">
-                                            {{ alert }}
-                                        </div>
+                            {% if form.username.errors %}
+                                <!-- is-invalid class used and field rendered if any errors are found during submit. -->
+                                {{ form.username(class="form-control is-invalid") }}
+                                <div class="form-errors">
+                                    {% for error in form.username.errors %}
+                                        <!-- error displayed to user -->
+                                        <span>{{ error }}</span>
                                     {% endfor %}
-                                {% endif %}
-                            {% endwith %}
+                                </div>
+                            {% else %}
+                                <!-- Default field displayed including placeholder text to direct user -->
+                                {{ form.username(class="form-control", placeholder="Username should be 5-15 characters in length!") }}
+                            {% endif %}
                         </div>
+
                         <div class="form-group">
-                            <!-- Password label and associated field -->
+                            <!-- Password label and associated field. With error capturing and displaying. -->
                             {{ form.password.label(class="form-control-label") }}
-                            {{ form.password(class="form-control") }}
+                            {% if form.password.errors %}
+                                <!-- is-invalid class used and field rendered if any errors are found during submit. -->
+                                {{ form.password(class="form-control is-invalid") }}
+                                <div class="form-errors">
+                                    {% for error in form.password.errors %}
+                                        <!-- error displayed to user -->
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                <!-- Default field displayed including placeholder text to direct user -->
+                                {{ form.password(class="form-control", placeholder="Password should be 5-12 characters in length!") }}
+                            {% endif %}
                         </div>
+
                         <div class="form-group">
-                            <!-- Password check label and associated field -->
+                            <!-- Password check label and associated field. With error capturing and displaying. -->
                             {{ form.password_confirm.label(class="form-control-label") }}
-                            {{ form.password_confirm(class="form-control") }}
+                            {% if form.password_confirm.errors %}
+                                <!-- is-invalid class used and field rendered if any errors are found during submit. -->
+                                {{ form.password_confirm(class="form-control is-invalid") }}
+                                <div class="form-errors">
+                                    {% for error in form.password_confirm.errors %}
+                                        <!-- error displayed to user -->
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                <!-- Default field displayed including placeholder text to direct user -->
+                                {{ form.password_confirm(class="form-control", placeholder="Retype Password!") }}
+                            {% endif %}
                         </div>
                         <div class="form-group text-center">
                             {{ form.submit(class="btn btn-primary") }}

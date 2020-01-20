@@ -49,7 +49,7 @@ def register():
                               'password': request.form['password']})
             return redirect(url_for('index'))
         else:
-            flash(f'Duplicate value detected for username.', 'danger')
+            flash(f'Duplicate value detected for username. Please try another username.', 'danger')
             return redirect(url_for('register'))
 
     return render_template('register.html', title='Register', form=register_form)

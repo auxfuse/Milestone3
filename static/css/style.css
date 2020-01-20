@@ -37,7 +37,7 @@ body::-webkit-scrollbar-thumb {
     background: -webkit-linear-gradient(#aae1d8, #84afa6, #aae1d8);
 }
 
-/* Alerts */
+/* Alerts & Form-Errors */
 .alert {
     padding: 0;
     margin-bottom: 0;
@@ -48,6 +48,11 @@ body::-webkit-scrollbar-thumb {
     color: #ab0c1c;
     /* Default Bootstrap styles include a lighter hued background to accompany text, removing via `transparent` value */
     background-color: transparent;
+    font-size: 0.9rem;
+}
+
+.form-errors {
+    color: #ab0c1c;
     font-size: 0.9rem;
 }
 
