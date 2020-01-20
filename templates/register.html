@@ -29,6 +29,7 @@
             <div class="row form-register-row">
                 <div class="col-sm-12">
                     <h2 class="register-header text-center">Register</h2>
+                    <!-- Alert to user that duplicate username has been detected. -->
                     <div class="text-center">
                         {% with alerts = get_flashed_messages(with_categories=true) %}
                             {% if alerts %}
@@ -41,7 +42,7 @@
                         {% endwith %}
                     </div>
                     <form id="register-login" action="" method="POST">
-                        <!-- hidden_tag needed to protect against CSRF (cross-site request forgery) attacks in conjunction with our secret key -->
+                        <!-- hidden_tag needed to protect against CSRF (cross-site request forgery) attacks in conjunction with our secret key. -->
                         {{ form.hidden_tag() }}
 
                         <div class="form-group">
