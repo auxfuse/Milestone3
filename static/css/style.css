@@ -243,6 +243,10 @@ footer .row {
 }
 
     /* Fundamentals Cards */
+.movements-row {
+    justify-content: center;
+}
+
 .fundamentals-card-body {
     min-height: 40rem;
 }
