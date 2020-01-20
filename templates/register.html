@@ -34,6 +34,7 @@
                         {{ form.hidden_tag() }}
                         <!-- Form elements rendered -->
                         <div class="form-group">
+                            <!-- Username label and associated field -->
                             {{ form.username.label(class="form-control-label") }}
                             {{ form.username(class="form-control") }}
                             {% with alerts = get_flashed_messages(with_categories=true) %}
@@ -47,12 +48,14 @@
                             {% endwith %}
                         </div>
                         <div class="form-group">
+                            <!-- Password label and associated field -->
                             {{ form.password.label(class="form-control-label") }}
                             {{ form.password(class="form-control") }}
                         </div>
                         <div class="form-group">
-                            {{ form.password_check.label(class="form-control-label") }}
-                            {{ form.password_check(class="form-control") }}
+                            <!-- Password check label and associated field -->
+                            {{ form.password_confirm.label(class="form-control-label") }}
+                            {{ form.password_confirm(class="form-control") }}
                         </div>
                         <div class="form-group text-center">
                             {{ form.submit(class="btn btn-primary") }}
