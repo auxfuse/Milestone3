@@ -2,6 +2,7 @@ import os
 from os import path
 from flask import Flask, render_template, redirect, request, url_for, session, flash
 from flask_pymongo import PyMongo
+from flask_bcrypt import Bcrypt
 from bson.objectid import ObjectId
 from forms import LoginForm, RegisterForm
 if path.exists("env.py"):
@@ -14,6 +15,7 @@ app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 
 mongo = PyMongo(app)
+bcrypt = Bcrypt(app)
 users = mongo.db.users
 
 @app.route('/')
@@ -58,14 +60,24 @@ def register():
         found_username = users.find_one({'username': request.form['username']})
 
         if not found_username:
-            users.insert_one({'username': request.form['username'],
-                              'password': request.form['password']})
+
+            hashed_pw = bcrypt.generate_password_hash(request.form['password']).decode('utf-8')
+            users.insert_one({'username': register_form.username.data,
+                              'password': hashed_pw})
+            session['username'] = request.form.get('username')
             return redirect(url_for('index'))
         else:
             flash(f'Duplicate value detected for username. Please try another username.', 'danger')
             return redirect(url_for('register'))
 
     return render_template('register.html', title='Register', form=register_form)
+
+
+@app.route('/logout')
+def logout():
+    session.clear()
+    flash(f'Thank you for using Oly-Track. See you soon.', 'primary')
+    return redirect(url_for('index'))
 
 
 @app.route('/create-session')
