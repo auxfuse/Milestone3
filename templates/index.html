@@ -12,8 +12,8 @@
     <section id="about">
         <div class="container">
             <div class="row">
-                <div class="col-sm-12 about-title text-center">
-                <!-- Alert to user notifying of successful logout. -->
+                <div class="col-sm-12 logout-alert text-center">
+                    <!-- Alert to user notifying of successful logout. -->
                     {% with alerts = get_flashed_messages(with_categories=true) %}
                         {% if alerts %}
                             {% for category, alert in alerts %}
@@ -23,6 +23,8 @@
                             {% endfor %}
                         {% endif %}
                     {% endwith %}
+                </div>
+                <div class="col-sm-12 about-title text-center">
                 <!-- Display username to user upon successful registration or login -->
                     {% if 'username' in session %}
                         <p>Welcome, {{ session['username'] }}</p>
