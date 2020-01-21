@@ -22,9 +22,9 @@ body::-webkit-scrollbar {
 
     /* Inset Box shadow used with background to create depth for Scrollbar track */
 body::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 2px rgba(0,0,0, 0.2);
+    -webkit-box-shadow: inset 0 0 1px rgba(0,0,0, 0.2);
     /* 5-stop Gradient used to create smooth end to end finish to compliment thumb styles */
-    background: -webkit-linear-gradient(#aae1d8, #aae1d8, #84afa6, #aae1d8, #aae1d8);
+    background: -webkit-linear-gradient(#aae1d8, #84afa6, #5f7f76, #84afa6, #aae1d8);
 }
 
     /* Scrollbar thumb styles */
@@ -33,7 +33,7 @@ body::-webkit-scrollbar-thumb {
     border: 1px solid #84afa6;
     border-radius: 8px;
     /* Vertical Box-shadow only to simulate depth of thumb sitting into the Track */
-    -webkit-box-shadow: 10px 0 5px rgba(94, 134, 125, 0.7);
+    -webkit-box-shadow: 10px 0 5px rgba(94, 134, 125, 0.8);
     background: -webkit-linear-gradient(#aae1d8, #84afa6, #aae1d8);
 }
 
