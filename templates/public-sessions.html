@@ -23,7 +23,7 @@
                     <div class="col-sm-12 col-md-6 public-cards card">
                         <div class="card-body public-cards-body text-center">
                             <!-- Anchor & Empty span overlay to allow user to click anywhere on card to be brought to full view -->
-                            <a href="{{ url_for('index') }}">
+                            <a href="{{ url_for('session_view', session_id=session._id) }}">
                                 <span class="div-url-overlay"></span>
                             </a>
                             <p class="card-text"><span class="pc-label">Focus:</span> {{ session.focus_name }}</p>

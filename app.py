@@ -93,9 +93,10 @@ def my_sessions():
     return render_template('my-sessions.html')
 
 
-@app.route('/session-view')
-def session_view():
-    return render_template('session-view.html')
+@app.route('/session-view/<session_id>', methods=['GET', 'POST'])
+def session_view(session_id):
+    my_session = get_sessions.find_one({'_id': ObjectId(session_id)})
+    return render_template('session-view.html', session=my_session)
 
 
 @app.route('/edit-session')
