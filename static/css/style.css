@@ -281,6 +281,10 @@ footer .row {
 
 /* Public Sessions */
 
+.public-cards-row {
+    justify-content: center;
+}
+
 /* Login */
 
 /* Media Queries */
@@ -303,8 +307,12 @@ footer .row {
 
 @media (min-width: 575px) {
     /* Max-width of card class to take affect from medium and up device widths */
-    .card {
+    .fundamentals-card {
         max-width: 20rem;
+    }
+
+    .public-cards {
+        max-width: 30rem;
     }
 }
 
