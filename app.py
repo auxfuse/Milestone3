@@ -17,6 +17,8 @@ app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 bcrypt = Bcrypt(app)
 users = mongo.db.users
+get_sessions = mongo.db.sessions
+
 
 @app.route('/')
 @app.route('/index')
