@@ -40,10 +40,11 @@ def login():
 
     if login_form.validate_on_submit():
         found_username = users.find_one({'username': request.form['username']})
-        found_password = users.find_one({'password': request.form['password']})
 
         if found_username:
-            if found_password:
+            if bcrypt.check_password_hash(found_username['password'], request.form.get('password').encode('utf-8')):
+                session['username'] = request.form.get('username')
+                session['logged-in'] = True
                 return redirect(url_for('my_sessions'))
             else:
                 flash(f'Username or Password incorrect. Please try again.', 'danger')

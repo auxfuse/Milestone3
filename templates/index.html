@@ -24,11 +24,13 @@
                         {% endif %}
                     {% endwith %}
                 </div>
-                <div class="col-sm-12 about-title text-center">
-                <!-- Display username to user upon successful registration or login -->
-                    {% if 'username' in session %}
+                <!-- Display username to user upon successful registration -->
+                {% if 'username' in session %}
+                    <div class="col-sm-12 greeting text-center">
                         <p>Welcome, {{ session['username'] }}</p>
-                    {% endif %}
+                    </div>
+                {% endif %}
+                <div class="col-sm-12 about-title text-center">
                     <h2>What is Oly-Track?</h2>
                 </div>
             </div>

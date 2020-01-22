@@ -2,9 +2,15 @@
 {% block content %}
     <div class="container content">
         <div class="row">
-            <div class="col-12">
+            <div class="col-sm-12 text-center">
                 <h1>My Sessions</h1>
             </div>
+        <!-- Display username to user upon successful login -->
+        {% if 'username' in session %}
+            <div class="col-sm-12 greeting text-center">
+                <p>Welcome, {{ session['username'] }}</p>
+            </div>
+        {% endif %}
         </div>
     </div>
 {% endblock %}

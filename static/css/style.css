@@ -54,7 +54,11 @@ body::-webkit-scrollbar-thumb {
 .alert-primary {
     color: #000000;
     background-color: transparent;
-    font-size: 1.1rem;
+    border-bottom: 1px solid #000000;
+    border-radius: 0;
+    padding-bottom: 0.6rem;
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
 }
 
 .form-errors {
@@ -176,6 +180,14 @@ footer .row {
 .about-title {
     text-decoration: underline;
     margin: 10px 0;
+}
+
+.greeting {
+    font-family: "Roboto", sans-serif;
+    font-size: 1.4rem;
+    border-bottom: 1px solid #000000;
+    border-radius: 0;
+    margin-bottom: 0.8rem;
 }
 
 .about-desc {
