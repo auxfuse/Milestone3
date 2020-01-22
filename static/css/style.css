@@ -285,6 +285,24 @@ footer .row {
     justify-content: center;
 }
 
+.public-cards {
+    box-shadow: 0 3px 4px rgba(50, 50, 50, 0.6);
+}
+
+.public-cards:hover {
+    box-shadow: 0 4px 5px rgba(84, 84, 121, 0.8);
+}
+
+    /* Empty span styled as an absolute positioned element inside the relative parent and set to the parent width & height. Z-Index set to 1 to ensure the empty span is brought to the foreground */
+.div-url-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
 /* Login */
 
 /* Media Queries */
@@ -307,7 +325,7 @@ footer .row {
 
 @media (min-width: 575px) {
     /* Max-width of card class to take affect from medium and up device widths */
-    .fundamentals-card {
+    .home-card-actions, .fundamentals-card {
         max-width: 20rem;
     }
 

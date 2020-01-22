@@ -9,14 +9,23 @@
         <div class="row">
             <div class="col-sm-12 text-center">
                 <p class="page-desc">This page will allow any user logged in or otherwise to view any session created by a registered user that they wanted to make public! You will be able to see all the details from the movements done, rep ranges and weights hit and any coaching notes they had during the session. Overtime the hope will be that coaches use this option to create public workouts to expand their clientele base. Exciting Stuff!</p>
-                <p class="page-help">Each card below contains some top level information for the session contained within. To see the full session information, hover over on of the cards and click or tap to be brought to the full session view.</p>
+                <p class="page-help">Each card below contains some top level information for the session contained within. To see the full session information, hover over the card and click or tap to be brought to the full session view.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center" id="about-logo-image">
+                <img class="img-fluid" src="{{ url_for('static', filename='images/oly-track-large-logo.png') }}" alt="Large Brand Logo">
             </div>
         </div>
         <div class="row public-cards-row">
             {% for session in sessions %}
                 {% if session.public_session == true %}
                     <div class="col-sm-12 col-md-6 public-cards card">
-                        <div class="card-body public-cards-body">
+                        <div class="card-body public-cards-body text-center">
+                            <!-- Anchor & Empty span overlay to allow user to click anywhere on card to be brought to full view -->
+                            <a href="{{ url_for('index') }}">
+                                <span class="div-url-overlay"></span>
+                            </a>
                             <p class="card-text"><span class="pc-label">Focus:</span> {{ session.focus_name }}</p>
                             <p class="card-text"><span class="pc-label">Part A:</span> {{ session.part_a }}</p>
                             <p class="card-text"><span class="pc-label">Accessory:</span> {{ session.accessory }}</p>
