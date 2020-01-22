@@ -31,7 +31,7 @@ def show_fundamentals():
 
 @app.route('/public-sessions')
 def show_public_sessions():
-    return render_template('public-sessions.html')
+    return render_template('public-sessions.html', sessions=mongo.db.sessions.find())
 
 
 @app.route('/login', methods=['GET', 'POST'])
