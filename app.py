@@ -4,7 +4,7 @@ from flask import Flask, render_template, redirect, request, url_for, session, f
 from flask_pymongo import PyMongo
 from flask_bcrypt import Bcrypt
 from bson.objectid import ObjectId
-from forms import LoginForm, RegisterForm
+from forms import LoginForm, RegisterForm, ViewWorkoutForm
 if path.exists("env.py"):
     import env
 
@@ -95,6 +95,7 @@ def my_sessions():
 
 @app.route('/session-view/<session_id>', methods=['GET', 'POST'])
 def session_view(session_id):
+
     my_session = get_sessions.find_one({'_id': ObjectId(session_id)})
     return render_template('session-view.html', session=my_session)
 

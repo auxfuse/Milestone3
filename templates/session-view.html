@@ -2,10 +2,22 @@
 {% block content %}
     <div class="container content">
         <div class="row">
-            <div class="col-12">
-                <h1>Session View</h1>
-                {{ session.focus_name }}
+            <div class="col-sm-12 about-title text-center">
+                <h2>Public Workouts</h2>
             </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <p class="page-desc">This section is dedicated to any users out there that may not want to utilise this app to its fullest purpose, in that you may not want to track your workouts at all. That's fine, we got you covered! Here are all the details relating to the workout you just clicked on!</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center" id="about-logo-image">
+                <img class="img-fluid" src="{{ url_for('static', filename='images/oly-track-large-logo.png') }}" alt="Large Brand Logo">
+            </div>
+        </div>
+        <div class="row workout-view-row">
+            {{ session.username }}/{{ session.location_name }}/{{ session.focus_name }}
         </div>
     </div>
 {% endblock %}
