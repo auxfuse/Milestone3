@@ -20,18 +20,20 @@
             </div>
         </div>
         <div class="row workout-view-row">
-            {{ workout.username }}/{{ workout.date }}
-            <div class="col-sm-12 workout-view-container text-center">
-                <span class="workout-view-label">Focus:</span><p class="workout-view-field">{{ workout.focus_name }}</p>
+            <div class="col-sm-12 workout-view-container">
+                <p class="workout-view-detail">Created by: {{ workout.username }} ~ Date: {{ workout.date }}</p>
             </div>
-            <div class="col-sm-12 workout-view-container text-center">
-                <span class="workout-view-label">Location:</span><p class="workout-view-field">{{ workout.location_name }}</p>
+            <div class="col-sm-12 workout-view-container">
+                <p class="workout-view-detail">Focus: {{ workout.focus_name }}</p>
             </div>
-            <div class="col-sm-12 workout-view-container text-center">
-                <span class="workout-view-label">Part A:</span><p class="workout-view-field">{{ workout.part_a }}</p>
+            <div class="col-sm-12 workout-view-container">
+                <p class="workout-view-detail">Location: {{ workout.location_name }}</p>
             </div>
-            <div class="col-sm-12 workout-view-container text-center">
-                <span class="workout-view-label">Part B:</span><p class="workout-view-field">{{ workout.part_b }}</p>
+            <div class="col-sm-12 workout-view-container">
+                <p class="workout-view-detail">Part A: {{ workout.part_a }}</p>
+            </div>
+            <div class="col-sm-12 workout-view-container">
+                <p class="workout-view-detail">Part B: {{ workout.part_b }}</p>
             </div>
         </div>
     </div>
