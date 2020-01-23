@@ -4,7 +4,7 @@ from flask import Flask, render_template, redirect, request, url_for, session, f
 from flask_pymongo import PyMongo
 from flask_bcrypt import Bcrypt
 from bson.objectid import ObjectId
-from forms import LoginForm, RegisterForm, ViewWorkoutForm
+from forms import LoginForm, RegisterForm, CreateWorkoutForm
 if path.exists("env.py"):
     import env
 
@@ -17,7 +17,7 @@ app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY")
 mongo = PyMongo(app)
 bcrypt = Bcrypt(app)
 users = mongo.db.users
-get_sessions = mongo.db.sessions
+get_workouts = mongo.db.workouts
 
 
 @app.route('/')
@@ -31,9 +31,9 @@ def show_fundamentals():
     return render_template('fundamentals.html', fundamentals=mongo.db.fundamental_movements.find())
 
 
-@app.route('/public-sessions')
-def show_public_sessions():
-    return render_template('public-sessions.html', sessions=mongo.db.sessions.find())
+@app.route('/public-workouts')
+def show_public_workouts():
+    return render_template('public-workouts.html', workouts=mongo.db.workouts.find())
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -47,7 +47,7 @@ def login():
             if bcrypt.check_password_hash(found_username['password'], request.form.get('password').encode('utf-8')):
                 session['username'] = request.form.get('username')
                 session['logged-in'] = True
-                return redirect(url_for('my_sessions'))
+                return redirect(url_for('my_workouts'))
             else:
                 flash(f'Username or Password incorrect. Please try again.', 'danger')
                 return redirect(url_for('login'))
@@ -83,26 +83,26 @@ def logout():
     return redirect(url_for('index'))
 
 
-@app.route('/create-session')
-def create_session():
-    return render_template('create-session.html')
+@app.route('/create-workout')
+def create_workout():
+    return render_template('create-workout.html')
 
 
-@app.route('/my-sessions')
-def my_sessions():
-    return render_template('my-sessions.html')
+@app.route('/my-workouts')
+def my_workouts():
+    return render_template('my-workouts.html')
 
 
-@app.route('/session-view/<session_id>', methods=['GET', 'POST'])
-def session_view(session_id):
+@app.route('/workout-view/<workout_id>', methods=['GET', 'POST'])
+def workout_view(workout_id):
 
-    my_session = get_sessions.find_one({'_id': ObjectId(session_id)})
-    return render_template('session-view.html', session=my_session)
+    my_workout = get_workouts.find_one({'_id': ObjectId(workout_id)})
+    return render_template('workout-view.html', workout=my_workout)
 
 
-@app.route('/edit-session')
-def edit_session():
-    return render_template('edit-session.html')
+@app.route('/edit-workout')
+def edit_workout():
+    return render_template('edit-workout.html')
 
 
 if __name__ == '__main__':

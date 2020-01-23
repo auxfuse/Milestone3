@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container content">
+        <div class="row">
+            <div class="col-sm-12 about-title text-center">
+                <h2>Public Workouts</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <p class="page-desc">This section is dedicated to any users out there that may not want to utilise this
+                    app to its fullest purpose, in that you may not want to track your workouts at all. That's fine, we
+                    got you covered! Here are all the details relating to the workout you just clicked on!</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-center" id="about-logo-image">
+                <img class="img-fluid" src="{{ url_for('static', filename='images/oly-track-large-logo.png') }}"
+                     alt="Large Brand Logo">
+            </div>
+        </div>
+        <div class="row workout-view-row">
+            {{ workout.username }}/{{ workout.date }}
+            <div class="col-sm-12 workout-view-container text-center">
+                <span class="workout-view-label">Focus:</span><p class="workout-view-field">{{ workout.focus_name }}</p>
+            </div>
+            <div class="col-sm-12 workout-view-container text-center">
+                <span class="workout-view-label">Location:</span><p class="workout-view-field">{{ workout.location_name }}</p>
+            </div>
+            <div class="col-sm-12 workout-view-container text-center">
+                <span class="workout-view-label">Part A:</span><p class="workout-view-field">{{ workout.part_a }}</p>
+            </div>
+            <div class="col-sm-12 workout-view-container text-center">
+                <span class="workout-view-label">Part B:</span><p class="workout-view-field">{{ workout.part_b }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
