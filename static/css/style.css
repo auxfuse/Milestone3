@@ -140,7 +140,7 @@ footer .row {
     font-size: 1.5rem;
 }
 
-/* Global page elements such as titles and descriptions etc */
+/* Global page elements such as titles, desc & rows etc */
 
 .content {
     margin: 75px auto 0;
@@ -148,9 +148,10 @@ footer .row {
 }
 
     /* Darkened sections to provide tone opposition to content above */
-#home-actions, #workout-details {
+#home-actions, #workout-details, #public-workout-list {
     background: #323232;
     border-top: 1px solid rgba(0,0,0, 0.5);
+    flex: 1;
 }
 
 /* Index (Home) */
@@ -285,6 +286,10 @@ footer .row {
 }
 
 /* Public Workouts */
+.page-help {
+    color: #545479;
+    font-style: italic;
+}
 
 .public-cards-row {
     justify-content: center;
