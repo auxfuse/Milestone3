@@ -148,7 +148,7 @@ footer .row {
 }
 
     /* Darkened sections to provide tone opposition to content above */
-#home-actions, #workout-details, #public-workout-list {
+#home-actions, #workout-details, #public-workout-list, #login, #registration {
     background: #323232;
     border-top: 1px solid rgba(0,0,0, 0.5);
     display: flex;
@@ -353,6 +353,19 @@ footer .row {
 
 /* Login */
 
+.login-form-row {
+    justify-content: center;
+}
+
+.login-form {
+    margin: 1rem;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0, 0.125);
+    border-radius: 0.25rem;
+    background-clip: border-box;
+    min-width: 0;
+}
+
 /* Media Queries */
 
 @media (min-width: 320px) {
@@ -379,6 +392,11 @@ footer .row {
 
     .public-cards {
         max-width: 30rem;
+    }
+
+    /* Login & Registration forms size constraint for larger devices */
+    .login-form {
+        max-width: 60%;
     }
 }
 
