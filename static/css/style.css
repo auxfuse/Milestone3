@@ -302,7 +302,8 @@ footer .row {
     font-weight: bold;
 }
 
-    /* Empty span styled as an absolute positioned element inside the relative parent and set to the parent width & height. Z-Index set to 1 to ensure the empty span is brought to the foreground */
+    /* Empty span styled as an absolute positioned element inside the relative parent and set to the parent width & height.
+            Z-Index set to 1 to ensure the empty span is brought to the foreground */
 .div-url-overlay {
     position: absolute;
     width: 100%;
@@ -342,9 +343,9 @@ footer .row {
     margin-bottom: 0.5rem;
 }
 
-/* Login */
+/* Login & Registration */
 
-.login-form {
+.login-form, .register-form {
     margin: 1rem;
     background: #ffffff;
     border: 1px solid rgba(0,0,0, 0.125);
@@ -353,7 +354,7 @@ footer .row {
     min-width: 0;
 }
 
-.login-header:after {
+.login-header:after, .register-header:after {
     content: '';
     display: block;
     height: 1px;
@@ -362,7 +363,7 @@ footer .row {
     background: #545479;
 }
 
-.login-form-row {
+.login-form-row, .register-form-row {
     justify-content: center;
 }
 
@@ -372,10 +373,11 @@ footer .row {
     margin-bottom: 0;
 }
 
-.login-btn {
+.login-btn, .register-btn {
     margin-top: 0.5rem;
 }
 
+    /* Only on Login page, styled link to navigate user to registration page */
 .register-link {
     margin-bottom: 1rem;
 }
@@ -419,7 +421,7 @@ footer .row {
     }
 
     /* Login & Registration forms size constraint for larger devices */
-    .login-form {
+    .login-form, .register-form {
         max-width: 60%;
     }
 }
