@@ -1,10 +1,38 @@
-{%  extends 'base.html' %}
+{% extends 'base.html' %}
 {% block content %}
-    <div class="container content">
-        <div class="row">
-            <div class="col-12">
-                <h1>Edit Session</h1>
+    <section class="about">
+        <div class="container content">
+            <div class="row">
+                <div class="col-sm-12 about-title text-center">
+                    <h2>Public Workouts</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <p class="page-desc">This section is strictly limited to those out there that Register and Login! Here,
+                        you can edit any of the details previously submitted of the workout.</p>
+                    <p class="page-help">Click/Tap into any of the fields below to edit your information. Some fields are completely
+                        text based and require you to type the information needed, others are dropdown fields to assist in
+                    categorizing your workouts into various filters, location for example.</p>
+                    <p class="page-help">When finished, hit the submit button to save your workout for you to reference later!</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <img class="img-fluid" src="{{ url_for('static', filename='images/oly-track-large-logo.png') }}"
+                         alt="Large Brand Logo">
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section id="create-workout">
+        <div class="container">
+            <div class="row workout-view-row">
+                <div class="col-sm-12 workout-card card">
+
+                </div>
+            </div>
+        </div>
+    </section>
 {% endblock %}

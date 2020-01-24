@@ -1,29 +1,50 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="container content">
-        <div class="row">
-            <div class="col-sm-12 about-title text-center">
-                <h2>Public Workouts</h2>
+    <section class="about">
+        <div class="container content">
+            <div class="row">
+                <div class="col-sm-12 about-title text-center">
+                    <h2>Create Workout</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <!-- Defensive element to hide core paragraphs in case user navigates to this page via browser url -->
+                    {% if 'username' in session %}
+                        <p class="page-desc">Welcome, {{ session['username'] }}, as a logged in user, you have the functionality to now track your workout information
+                        on the fly, completely mobile on your smartphone. Instead of taking a gym-selfie and controlling that perfect angle,
+                            take control of the important details from each and every workout, whether that be Crossfit, Olympic Weightlifting,
+                        or a Composition piece etc.</p>
+                        <p class="page-help">Click/Tap into any of the fields below to add your information. Some fields are completely
+                            text based and require you to type the information needed, others are dropdown fields to assist in
+                        categorizing your workouts into various filters, location for example.</p>
+                        <p class="page-help">When finished, hit the submit button to save your workout for you to reference later!</p>
+                    {% else %}
+                        <p class="page-help">You are not logged in to view this page. Please Login.</p>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <img class="img-fluid" src="{{ url_for('static', filename='images/oly-track-large-logo.png') }}"
+                         alt="Large Brand Logo">
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <p class="page-desc">This section is dedicated to any users out there that may not want to utilise this app
-                    to its fullest purpose, in that you may not want to track your workouts at all. That's fine, we got you
-                    covered! Here are all the details relating to the workout you just clicked on!</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 text-center" id="about-logo-image">
-                <img class="img-fluid" src="{{ url_for('static', filename='images/oly-track-large-logo.png') }}"
-                     alt="Large Brand Logo">
-            </div>
-        </div>
-        <div class="row workout-view-row">
-            <div class="col-sm-12 workout-card card">
+    </section>
 
+    <!-- Defensive element of Section hidden if user is not logged in. -->
+{% if 'username' in session %}
+    <section id="create-workout">
+        <div class="container">
+            <div class="row workout-view-row">
+                    <div class="col-sm-12 text-center">
+                        <p class="page-help">Success</p>
+                    </div>
             </div>
-            {% endfor %}
         </div>
-    </div>
+    </section>
+{% else %}
+    <div id="restricted-access"></div>
+{% endif %}
 {% endblock %}
