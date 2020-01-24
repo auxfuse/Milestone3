@@ -313,6 +313,7 @@ footer .row {
 .workout-view-row {
     background: #323232;
     margin-top: 0.8rem;
+    justify-content: center;
 }
 
 .workout-card-body {
