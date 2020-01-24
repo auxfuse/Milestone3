@@ -1,43 +1,57 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="container content">
-        <div class="row">
-            <div class="col-sm-12 about-title text-center">
-                <h2>Public Workouts</h2>
+    <section class="about">
+        <div class="container content">
+            <div class="row">
+                <div class="col-sm-12 about-title text-center">
+                    <h2>Workout Details</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <p class="page-desc">This section is dedicated to any users out there that may not want to utilise this
+                        app to its fullest purpose, in that you may not want to track your workouts at all. That's fine, we
+                        got you covered! Here are all the details relating to the workout you just clicked on!</p>
+                    <p class="page-desc">This section is dedicated to any users out there that may not want to utilise this
+                        app to its fullest purpose, in that you may not want to track your workouts at all. That's fine, we
+                        got you covered! Here are all the details relating to the workout you just clicked on!</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center" id="about-logo-image">
+                    <img class="img-fluid" src="{{ url_for('static', filename='images/oly-track-large-logo.png') }}"
+                         alt="Large Brand Logo">
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <p class="page-desc">This section is dedicated to any users out there that may not want to utilise this
-                    app to its fullest purpose, in that you may not want to track your workouts at all. That's fine, we
-                    got you covered! Here are all the details relating to the workout you just clicked on!</p>
+    </section>
+
+    <section id="workout-details">
+        <div class="container">
+            <div class="row workout-view-row">
+                <div class="col-sm-12 workout-view-card card">
+                    <div class="card-body workout-card-body text-center">
+                        <h5 class="card-title wcb-title">Detail</h5>
+                        <p class="card-text wc-text"><span class="wd-label">Created by: </span>{{ workout.username }}</p>
+                        <p class="card-text"><span class="wd-label">Date: </span>{{ workout.date }}</p>
+                        <p class="card-text"><span class="wd-label">Location: </span>{{ workout.location_name }}</p>
+                        <p class="card-text"><span class="wd-label">Focus: </span>{{ workout.focus_name }}</p>
+                    </div>
+                    <div class="card-body workout-card-body text-center">
+                        <h5 class="card-title wcb-title">Workout</h5>
+                        <p class="card-text"><span class="wd-label">Part A: </span>{{ workout.part_a }}</p>
+                        <p class="card-text"><span class="wd-label">Part B: </span>{{ workout.part_b }}</p>
+                        <p class="card-text"><span class="wd-label">Part C: </span>{{ workout.part_c }}</p>
+                        <p class="card-text"><span class="wd-label">Accessory: </span>{{ workout.accessory }}</p>
+                    </div>
+                    <div class="card-body workout-card-body text-center">
+                        <h5 class="card-title wcb-title">Additional</h5>
+                        <p class="card-text"><span class="wd-label">Additional Info: </span>{{ workout.additional_info }}</p>
+                        <p class="card-text"><span class="wd-label">Coach Notes: </span>{{ workout.coach_notes }}</p>
+                    </div>
+                </div>
+
             </div>
         </div>
-        <div class="row">
-            <div class="col-sm-12 text-center" id="about-logo-image">
-                <img class="img-fluid" src="{{ url_for('static', filename='images/oly-track-large-logo.png') }}"
-                     alt="Large Brand Logo">
-            </div>
-        </div>
-        <div class="row workout-view-row">
-            <div class="col-sm-12 workout-view-container">
-                <p class="workout-view-detail">Created by: {{ workout.username }} ~ Date: {{ workout.date }}</p>
-            </div>
-            <div class="col-sm-12 workout-view-container">
-                <p class="workout-view-detail">Focus: {{ workout.focus_name }}</p>
-            </div>
-            <div class="col-sm-12 workout-view-container">
-                <p class="workout-view-detail">Location: {{ workout.location_name }}</p>
-            </div>
-            <div class="col-sm-12 workout-view-container">
-                <p class="workout-view-detail">Part A: {{ workout.part_a }}</p>
-            </div>
-            <div class="col-sm-12 workout-view-container">
-                <p class="workout-view-detail">Part B: {{ workout.part_b }}</p>
-            </div>
-            <div class="col-sm-12 workout-view-container">
-                <p class="workout-view-detail">Part C: {{ workout.part_c }}</p>
-            </div>
-        </div>
-    </div>
+    </section>
 {% endblock %}
