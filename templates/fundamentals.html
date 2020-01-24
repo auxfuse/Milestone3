@@ -1,32 +1,39 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="container content">
-        <div class="row">
-            <div class="col-sm-12 about-title text-center">
-                <h2>The Fundamental Lifts</h2>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <p class="page-desc">In this section we cover the fundamental lifts and even include some basic short duration GIFs as a visual example. It is important for beginners and experienced lifters alike to revisit this page often, ensuring all the main written and visual cues are followed to strengthen these fundamental foundational movements during your training sessions.</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 text-center" id="about-logo-image">
-                <img class="img-fluid" src="{{ url_for('static', filename='images/oly-track-large-logo.png') }}" alt="Large Brand Logo">
-            </div>
-        </div>
-        <div class="row movements-row">
-            {% for movement in fundamentals %}
-                <div class="col-sm-12 col-md-6 col-lg-4 fundamentals-card card">
-                    <div class="card-body fundamentals-card-body">
-                        <img src="{{ movement.media }}" alt="movement media" class="card-img-top">
-                        <h5 class="card-title text-center movement-title">{{ movement.movement_title }}</h5>
-                        <p class="card-text"><span class="desc-label">Desc:</span> {{ movement.movement_desc }}</p>
-                        <p class="card-text"><span class="cues-label">Cues:</span> {{ movement.movement_cues }}</p>
-                    </div>
+    <section class="about">
+        <div class="container content">
+            <div class="row">
+                <div class="col-sm-12 about-title text-center">
+                    <h2>The Fundamental Lifts</h2>
                 </div>
-            {% endfor %}
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <p class="page-desc">In this section we cover the fundamental lifts and even include some basic short duration GIFs as a visual example. It is important for beginners and experienced lifters alike to revisit this page often, ensuring all the main written and visual cues are followed to strengthen these fundamental foundational movements during your training sessions.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center" id="about-logo-image">
+                    <img class="img-fluid" src="{{ url_for('static', filename='images/oly-track-large-logo.png') }}" alt="Large Brand Logo">
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <section id="fundamentals-list">
+        <div class="container">
+            <div class="row movements-row">
+                {% for movement in fundamentals %}
+                    <div class="col-sm-12 col-md-6 col-lg-4 fundamentals-card card">
+                        <div class="card-body fundamentals-card-body">
+                            <img src="{{ movement.media }}" alt="movement media" class="card-img-top">
+                            <h5 class="card-title text-center movement-title">{{ movement.movement_title }}</h5>
+                            <p class="card-text"><span class="desc-label">Desc:</span> {{ movement.movement_desc }}</p>
+                            <p class="card-text"><span class="cues-label">Cues:</span> {{ movement.movement_cues }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
 {% endblock %}
