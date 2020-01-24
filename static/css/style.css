@@ -279,7 +279,7 @@ footer .row {
     font-style: italic;
 }
 
-/* Public Sessions */
+/* Public Workouts */
 
 .public-cards-row {
     justify-content: center;
@@ -301,6 +301,27 @@ footer .row {
     top: 0;
     left: 0;
     z-index: 1;
+}
+
+/* Workout View */
+
+.workout-view-row {
+    background: #323232;
+    border-top: 1px solid rgba(0,0,0, 0.5);
+    margin-top: 0.8rem;
+}
+
+.workout-view-container {
+    background: #ffffff;
+    border: 1px solid #323232;
+    border-radius: 5px;
+    width: 60%;
+    margin: 10px auto;
+    padding: 5px 10px;
+}
+
+.workout-view-detail {
+    margin: auto 0;
 }
 
 /* Login */
