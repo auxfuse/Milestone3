@@ -151,7 +151,9 @@ footer .row {
 #home-actions, #workout-details, #public-workout-list {
     background: #323232;
     border-top: 1px solid rgba(0,0,0, 0.5);
+    display: flex;
     flex: 1;
+    align-items: center;
 }
 
 /* Index (Home) */
@@ -286,6 +288,7 @@ footer .row {
 }
 
 /* Public Workouts */
+
 .page-help {
     color: #545479;
     font-style: italic;
@@ -296,11 +299,16 @@ footer .row {
 }
 
 .public-cards {
-    box-shadow: 0 3px 4px rgba(50, 50, 50, 0.6);
+    box-shadow: 0 3px 4px rgba(29, 29, 29, 0.6);
 }
 
 .public-cards:hover {
-    box-shadow: 0 4px 5px rgba(84, 84, 121, 0.8);
+    box-shadow: 0 4px 5px rgba(155, 155, 227, 0.8);
+}
+
+.pc-label {
+    font-family: "Maven Pro", sans-serif;
+    font-weight: bold;
 }
 
     /* Empty span styled as an absolute positioned element inside the relative parent and set to the parent width & height. Z-Index set to 1 to ensure the empty span is brought to the foreground */
