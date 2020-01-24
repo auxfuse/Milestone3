@@ -36,13 +36,22 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 home-about-desc text-center">
-                    <p>An application for Olympic Weightlifting clubs, athletes or everyday gym-goers who lift barbells. Primarily used to record Olympic Weightlifting sessions and is based towards those movements, but it can also be used to track any fitness session from Crossfit - Powerlifting and everything in between.</p>
-                    <p>It was designed with ease of use and access in mind. Currently, as an aspiring Competitive Olympic Weightlifter, I often find myself forgetting to bring along my Session journal and by the time I get it, I have forgotten the rep schemes, movements and the weights lifted. You never forget your phone....so why not use a tool that is always readily available in your pocket to sit down in the middle of a session and record what you just did for that day? Enter Oly-Track!</p>
+                    <p>An application for Olympic Weightlifting clubs, athletes or everyday gym-goers who lift barbells.
+                        Primarily used to record Olympic Weightlifting sessions and is based towards those movements,
+                        but it can also be used to track any fitness session from Crossfit - Powerlifting and everything
+                        in between.</p>
+                    <p>It was designed with ease of use and access in mind. Currently, as an aspiring Competitive
+                        Olympic Weightlifter, I often find myself forgetting to bring along my Session journal and by
+                        the time I get it, I have forgotten the rep schemes, movements and the weights lifted. You never
+                        forget your phone....so why not use a tool that is always readily available in your pocket to
+                        sit down in the middle of a session and record what you just did for that day? Enter
+                        Oly-Track!</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-12 text-center">
-                    <img class="img-fluid" src="{{ url_for('static', filename='images/oly-track-large-logo.png') }}" alt="Large Brand Logo">
+                    <img class="img-fluid" src="{{ url_for('static', filename='images/oly-track-large-logo.png') }}"
+                         alt="Large Brand Logo">
                 </div>
             </div>
         </div>
@@ -54,25 +63,45 @@
                 <div class="card home-card-actions col-md-12 col-lg-4">
                     <div class="card-body text-center">
                         <h5 class="card-title hca-title">See the Fundamentals</h5>
-                        <p class="card-text">Form is king! Plain and simple. As babies we learn to crawl first, then walk/run and eventually we can climb almost any obstacle.</p>
-                        <p class="card-text hca-p2">Weightlifting is no different, practice often and light, and even when competent, before increasing the volume and the weight.</p>
-                        <a href="{{url_for('show_fundamentals')}}" class="btn btn-primary">Learn More</a>
+                        <p class="card-text">Form is king! Plain and simple. As babies we learn to crawl first, then
+                            walk/run and eventually we can climb almost any obstacle.</p>
+                        <p class="card-text hca-p2">Weightlifting is no different, practice often and light, and even
+                            when competent, before increasing the volume and the weight.</p>
+                        <a href="{{ url_for('show_fundamentals') }}" class="btn btn-primary">Learn More</a>
                     </div>
                 </div>
                 <div class="card home-card-actions col-md-12 col-lg-4">
                     <div class="card-body text-center">
                         <h5 class="card-title hca-title">See Public Sessions</h5>
-                        <p class="card-text">Need a session quick? Or maybe you are just beginning and are wanting to see what some day to day sessions for you could be?</p>
-                        <p class="card-text hca-p2">This section contains some top industry standard sessions and some users are generous enough to make their sessions public, so you can see how they trained.</p>
-                        <a href="{{url_for('show_public_workouts')}}" class="btn btn-primary">Find Session</a>
+                        <p class="card-text">Need a session quick? Or maybe you are just beginning and are wanting to
+                            see what some day to day sessions for you could be?</p>
+                        <p class="card-text hca-p2">This section contains some top industry standard sessions and some
+                            users are generous enough to make their sessions public, so you can see how they
+                            trained.</p>
+                        <a href="{{ url_for('show_public_workouts') }}" class="btn btn-primary">Find Session</a>
                     </div>
                 </div>
                 <div class="card home-card-actions col-md-12 col-lg-4">
                     <div class="card-body text-center">
-                        <h5 class="card-title hca-title">Login</h5>
-                        <p class="card-text">To keep track of and to only view your sessions/workouts, we recommend logging in.</p>
-                        <p class="card-text hca-p2">When filling out a session form, you have the option to keep them private or make them public. Take control of your day-to-day sessions and in time it will become 2nd nature to login.</p>
-                        <a href="{{url_for('login')}}" class="btn btn-primary">Login</a>
+                        <!-- Change Card information and call to action depending on user login status. -->
+                        {% if 'username' in session %}
+                            <h5 class="card-title hca-title">Logout</h5>
+                            <p class="card-text">Thank you for using Oly-Track!. It takes a lot to put your faith in a
+                                new app and to track and detail every aspect of your workouts ensuring
+                                your accountability.</p>
+                            <p class="card-text hca-p2">It is great to know that you are with us along this journey as
+                                the app develops. To logout, simply click the button below.</p>
+                            <a href="{{ url_for('logout') }}" class="btn btn-primary">Logout</a>
+                        {% else %}
+                            <h5 class="card-title hca-title">Login</h5>
+                            <p class="card-text">To keep track of and to only view your sessions/workouts, we recommend
+                                logging in.</p>
+                            <p class="card-text hca-p2">When filling out a session form, you have the option to keep
+                                them private or make them public. Take control of your day-to-day sessions and in time
+                                it
+                                will become 2nd nature to login.</p>
+                            <a href="{{ url_for('login') }}" class="btn btn-primary">Login</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>
