@@ -9,86 +9,101 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 login-desc text-center">
-                    <p>Logging into Oly-track allows you, the User, to create your sessions on the fly. It is easy to forget a pen and a journal, but no so easily your phone. Each session created is a session tracked, so tracking your sessions this application allows you the freedom to access your past sessions anywhere...(as long as you have a device to login).</p>
-                    <p>Each training session you do will also have coach feedback, so each session documented in the application has an input for you to detail that information so you don't have to try and remember in a pinch what was said possibly weeks ago. Tracking Sessions has never been easier! Welcome to Oly-Track!</p>
+                    <!-- Defensive element to hide core paragraphs in case user navigates to this page via browser url & is already logged in -->
+                    {% if 'username' in session %}
+                        <p class="page-help">You are already logged in.</p>
+                    {% else %}
+                        <p>Logging into Oly-track allows you, the User, to create your sessions on the fly. It is easy
+                            to forget a pen and a journal, but no so easily your phone. Each session created is a session tracked,
+                            so tracking your sessions this application allows you the freedom to access your past sessions anywhere...(as
+                            long as you have a device to login).</p>
+                        <p>Each training session you do will also have coach feedback, so each session documented in the
+                            application has an input for you to detail that information so you don't have to try and remember in a
+                            pinch what was said possibly weeks ago. Tracking Sessions has never been easier! Welcome to Oly-Track!</p>
+                    {% endif %}
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-12 text-center">
-                    <img class="img-fluid" src="{{ url_for('static', filename='images/oly-track-large-logo.png') }}" alt="Large Brand Logo">
+                    <img class="img-fluid" src="{{ url_for('static', filename='images/oly-track-large-logo.png') }}"
+                         alt="Large Brand Logo">
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="login">
-        <div class="container">
-            <div class="row login-form-row">
-                <div class="col-sm-12 login-form">
-                    <h2 class="login-header text-center">Login</h2>
-                    <!-- Alert to user that username or password incorrect. -->
-                    <div class="text-center">
-                        {% with alerts = get_flashed_messages(with_categories=true) %}
-                            {% if alerts %}
-                                {% for category, alert in alerts %}
-                                    <div class="alert alert-{{ category }}">
-                                        {{ alert }}
+    {% if 'username' in session %}
+        <div id="restricted-access"></div>
+    {% else %}
+        <section id="login">
+            <div class="container">
+                <div class="row login-form-row">
+                    <div class="col-sm-12 login-form">
+                        <h2 class="login-header text-center">Login</h2>
+                        <!-- Alert to user that username or password incorrect. -->
+                        <div class="text-center">
+                            {% with alerts = get_flashed_messages(with_categories=true) %}
+                                {% if alerts %}
+                                    {% for category, alert in alerts %}
+                                        <div class="alert alert-{{ category }}">
+                                            {{ alert }}
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endwith %}
+                        </div>
+                        <form action="" method="POST">
+                            <!-- hidden_tag needed to protect against CSRF (cross-site request forgery) attacks in conjunction with our secret key -->
+                            {{ form.hidden_tag() }}
+
+                            <!-- Form elements rendered -->
+                            <div class="form-group">
+                                {{ form.username.label(class="form-control-label") }}
+                                {% if form.username.errors %}
+                                    <!-- is-invalid class used and field rendered if any errors are found during submit. -->
+                                    {{ form.username(class="form-control is-invalid") }}
+                                    <div class="form-errors">
+                                        {% for error in form.username.errors %}
+                                            <!-- error displayed to user -->
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
                                     </div>
-                                {% endfor %}
-                            {% endif %}
-                        {% endwith %}
-                    </div>
-                    <form action="" method="POST">
-                        <!-- hidden_tag needed to protect against CSRF (cross-site request forgery) attacks in conjunction with our secret key -->
-                        {{ form.hidden_tag() }}
+                                {% else %}
+                                    <!-- Default field displayed including placeholder text to direct user and removing default validation provided by Bootstrap
+                                    to ensure field theme is consistent throughout the application as validated in forms.py file and custom styled in css. -->
+                                    {{ form.username(class="form-control", placeholder="Please enter username.", required=False) }}
+                                {% endif %}
+                            </div>
 
-                        <!-- Form elements rendered -->
-                        <div class="form-group">
-                            {{ form.username.label(class="form-control-label") }}
-                            {% if form.username.errors %}
-                                <!-- is-invalid class used and field rendered if any errors are found during submit. -->
-                                {{ form.username(class="form-control is-invalid") }}
-                                <div class="form-errors">
-                                    {% for error in form.username.errors %}
-                                        <!-- error displayed to user -->
-                                        <span>{{ error }}</span>
-                                    {% endfor %}
-                                </div>
-                            {% else %}
-                                <!-- Default field displayed including placeholder text to direct user and removing default validation provided by Bootstrap
-                                to ensure field theme is consistent throughout the application as validated in forms.py file and custom styled in css. -->
-                                {{ form.username(class="form-control", placeholder="Please enter username.", required=False) }}
-                            {% endif %}
+                            <div class="form-group">
+                                {{ form.password.label(class="form-control-label") }}
+                                {% if form.password.errors %}
+                                    <!-- is-invalid class used and field rendered if any errors are found during submit. -->
+                                    {{ form.password(class="form-control is-invalid") }}
+                                    <div class="form-errors">
+                                        {% for error in form.password.errors %}
+                                            <!-- error displayed to user -->
+                                            <span>{{ error }}</span>
+                                        {% endfor %}
+                                    </div>
+                                {% else %}
+                                    <!-- Default field displayed including placeholder text to direct user and removing default validation provided by Bootstrap
+                                    to ensure field theme is consistent throughout the application as validated in forms.py file and custom styled in css. -->
+                                    {{ form.password(class="form-control", placeholder="Please enter password.", required=False) }}
+                                {% endif %}
+                            </div>
+
+                            <div class="form-group text-center">
+                                {{ form.submit(class="btn btn-primary login-btn") }}
+                            </div>
+                        </form>
+
+                        <div class="col-sm-12 register-link text-center">
+                            <a href="{{ url_for('register') }}">No Login? Click Here.</a>
                         </div>
-
-                        <div class="form-group">
-                            {{ form.password.label(class="form-control-label") }}
-                            {% if form.password.errors %}
-                                <!-- is-invalid class used and field rendered if any errors are found during submit. -->
-                                {{ form.password(class="form-control is-invalid") }}
-                                <div class="form-errors">
-                                    {% for error in form.password.errors %}
-                                        <!-- error displayed to user -->
-                                        <span>{{ error }}</span>
-                                    {% endfor %}
-                                </div>
-                            {% else %}
-                                <!-- Default field displayed including placeholder text to direct user and removing default validation provided by Bootstrap
-                                to ensure field theme is consistent throughout the application as validated in forms.py file and custom styled in css. -->
-                                {{ form.password(class="form-control", placeholder="Please enter password.", required=False) }}
-                            {% endif %}
-                        </div>
-
-                        <div class="form-group text-center">
-                            {{ form.submit(class="btn btn-primary login-btn") }}
-                        </div>
-                    </form>
-
-                    <div class="col-sm-12 register-link text-center">
-                        <a href="{{url_for('register')}}">No Login? Click Here.</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    {% endif %}
 {% endblock %}
