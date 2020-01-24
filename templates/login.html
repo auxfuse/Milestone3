@@ -9,7 +9,7 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 login-desc text-center">
-                    <!-- Defensive element to hide core paragraphs in case user navigates to this page via browser url & is already logged in -->
+                    <!-- Defensive element to hide core paragraphs in case user navigates to this page via browser url & is already logged in. -->
                     {% if 'username' in session %}
                         <p class="page-help">You are already logged in.</p>
                     {% else %}
@@ -32,6 +32,8 @@
         </div>
     </section>
 
+    <!-- If user is already logged in form is hidden otherwise form is shown for login. -->
+    <!-- To protect the application flow in case of url navigation. -->
     {% if 'username' in session %}
         <div id="restricted-access"></div>
     {% else %}
