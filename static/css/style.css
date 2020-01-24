@@ -219,16 +219,7 @@ footer .row {
 }
 
     /* Small dividers to break the card info up */
-.hca-title::after {
-    content: '';
-    display: block;
-    height: 1px;
-    width: 60%;
-    margin: 5px auto;
-    background: #545479;
-}
-
-.hca-p2::after {
+.hca-title::after, .hca-p2::after {
     content: '';
     display: block;
     height: 1px;
@@ -353,10 +344,6 @@ footer .row {
 
 /* Login */
 
-.login-form-row {
-    justify-content: center;
-}
-
 .login-form {
     margin: 1rem;
     background: #ffffff;
@@ -364,6 +351,43 @@ footer .row {
     border-radius: 0.25rem;
     background-clip: border-box;
     min-width: 0;
+}
+
+.login-header:after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 60%;
+    margin: 5px auto;
+    background: #545479;
+}
+
+.login-form-row {
+    justify-content: center;
+}
+
+.form-control-label {
+    font-family: "Maven Pro", sans-serif;
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+.login-btn {
+    margin-top: 0.5rem;
+}
+
+.register-link {
+    margin-bottom: 1rem;
+}
+
+.register-link a {
+    color: #545479;
+    font-family: "Maven Pro", sans-serif;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: none;
+    padding: 5px;
+    border-bottom: 1px solid #545479;
 }
 
 /* Media Queries */
