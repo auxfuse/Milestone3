@@ -19,7 +19,7 @@ class RegisterForm(FlaskForm):
 
 
 class CreateWorkoutForm(FlaskForm):
-    date = DateField('Date', format='%d/%m/%Y')
+    date = DateField('Date', format='%Y/%m/%d')
     location_name = SelectField('Location')
     focus_name = SelectField('Focus')
     part_a = StringField('Part A')

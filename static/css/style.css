@@ -344,7 +344,7 @@ footer .row {
     margin-bottom: 0.5rem;
 }
 
-/* Login, Registration, Create Workout & Edit Workout Forms */
+/* Login, Registration, Create Workout & Edit Workout Forms ~ move to global */
 
 .login-form, .register-form, .create-workout-form {
     margin: 1rem;

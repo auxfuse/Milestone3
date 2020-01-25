@@ -86,6 +86,10 @@ def logout():
 @app.route('/create-workout', methods=['GET', 'POST'])
 def create_workout():
     create_workout_form = CreateWorkoutForm()
+    focus_type = mongo.db.focus_type.distinct('focus_name')
+    create_workout_form.focus_name.choices = [('', 'Please select')] + [(focus, focus) for focus in focus_type]
+    location_type = mongo.db.location.distinct('location_name')
+    create_workout_form.location_name.choices = [('', 'Please select')] + [(locale, locale) for locale in location_type]
 
     if create_workout_form.validate_on_submit():
         get_workouts.insert_one({
@@ -103,7 +107,7 @@ def create_workout():
         })
         flash(f'Workout added.', 'primary')
         return redirect(url_for('index'))
-    return render_template('create-workout.html', title='Create Workout', form=create_workout_form)
+    return render_template('create-workout.html', form=create_workout_form)
 
 
 @app.route('/my-workouts')
