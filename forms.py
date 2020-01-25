@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField, PasswordField, DateField, SelectField, BooleanField
+from wtforms import StringField, SubmitField, PasswordField, SelectField, BooleanField
 from wtforms.validators import DataRequired, Length, EqualTo
 
 
@@ -19,7 +19,6 @@ class RegisterForm(FlaskForm):
 
 
 class CreateWorkoutForm(FlaskForm):
-    date = DateField('Date')
     location_name = SelectField('Location')
     focus_name = SelectField('Focus')
     part_a = StringField('Part A')
@@ -33,7 +32,6 @@ class CreateWorkoutForm(FlaskForm):
 
 
 class EditWorkoutForm(FlaskForm):
-    date = DateField('Date')
     location_name = SelectField('Location')
     focus_name = SelectField('Focus')
     part_a = StringField('Part A')

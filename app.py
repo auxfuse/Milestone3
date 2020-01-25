@@ -1,4 +1,5 @@
 import os
+import datetime
 from os import path
 from flask import Flask, render_template, redirect, request, url_for, session, flash
 from flask_pymongo import PyMongo
@@ -88,10 +89,9 @@ def create_workout():
     create_workout_form = CreateWorkoutForm()
 
     if request.method == 'POST':
-        print("Here")
         get_workouts.insert_one({
             'username': session['username'],
-            'date': create_workout_form.date.data,
+            'date': datetime.datetime.utcnow().strftime('%H:%M:%S - %d/%m/%Y'),
             'location_name': create_workout_form.location_name.data,
             'focus_name': create_workout_form.focus_name.data,
             'part_a': create_workout_form.part_a.data,
@@ -109,8 +109,6 @@ def create_workout():
     create_workout_form.focus_name.choices = [('', 'Please select')] + [(focus, focus) for focus in focus_type]
     location_type = mongo.db.location.distinct('location_name')
     create_workout_form.location_name.choices = [('', 'Please select')] + [(locale, locale) for locale in location_type]
-
-    # if create_workout_form.validate_on_submit():
 
     return render_template('create-workout.html', form=create_workout_form)
 
