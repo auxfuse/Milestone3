@@ -9,9 +9,11 @@
     <!-- Browser tab title -->
     <title>Oly-Track</title>
     <!-- Associated links for styles/fonts & frameworks -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.13/combined/css/gijgo.min.css">
     <!-- My css stylesheet loaded after Bootstrap and other framework to ensure my styles take affect-->
     <link rel="stylesheet" href="{{url_for('static', filename='css/style.css') }}">
     </head>
@@ -119,10 +121,13 @@
         </div>
     </footer>
 
+
     <!-- jQuery & popper.js for interactive elements from Bootstrap such as Navbar expand/collapse and Modal popup etc -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gijgo/1.9.13/combined/js/gijgo.min.js"></script>
     <!-- Custom Javascript file link -->
     <script src="{{ url_for('static', filename='js/javascript.js') }}"></script>
     </body>

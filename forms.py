@@ -19,28 +19,29 @@ class RegisterForm(FlaskForm):
 
 
 class CreateWorkoutForm(FlaskForm):
-    date = DateField('Date', format='%Y-%m-%d')
-    focus_name = StringField('Focus')
-    location_name = StringField('Location')
+    date = DateField('Date', format='%d/%m/%Y')
+    focus_name = SelectField('Focus')
+    location_name = SelectField('Location')
     part_a = StringField('Part A')
     part_b = StringField('Part B')
     part_c = StringField('Part C')
     accessory = StringField('Accessory')
     additional_info = StringField('Additional Info')
     coach_notes = StringField('Coach Notes')
-    public_session = BooleanField('Public')
+    public_workout = BooleanField('Public')
     create = SubmitField('Create')
 
 
 class EditWorkoutForm(FlaskForm):
-    date = DateField('Date', format='%Y-%m-%d')
-    focus_name = StringField('Focus')
-    location_name = StringField('Location')
+    date = DateField('Date', format='%d-%m-%Y')
+    focus_name = SelectField('Focus')
+    location_name = SelectField('Location')
     part_a = StringField('Part A')
     part_b = StringField('Part B')
     part_c = StringField('Part C')
     accessory = StringField('Accessory')
     additional_info = StringField('Additional Info')
     coach_notes = StringField('Coach Notes')
-    public_session = BooleanField('Public')
+    public_workout = BooleanField('Public')
     update = SubmitField('Update')
+

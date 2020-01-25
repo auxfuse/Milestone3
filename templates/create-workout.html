@@ -37,10 +37,19 @@
 {% if 'username' in session %}
     <section id="create-workout">
         <div class="container">
-            <div class="row workout-view-row">
-                    <div class="col-sm-12 text-center">
-                        <p class="page-help">Success</p>
+            <div class="row create-workout-row">
+                <div class="col-sm-12 create-workout-form">
+                    <h2 class="create-header text-center">Create Workout</h2>
+                </div>
+                <form action="" method="POST">
+                    <!-- hidden_tag needed to protect against CSRF (cross-site request forgery) attacks in conjunction with our secret key. -->
+                    {{ form.hidden_tag() }}
+
+                    <div class="form-group">
+                        {{ form.date.label(class="form-control-label") }}
+                        {{ form.date(class="form-control", id="datepicker", required=True) }}
                     </div>
+                </form>
             </div>
         </div>
     </section>

@@ -4,7 +4,7 @@ from flask import Flask, render_template, redirect, request, url_for, session, f
 from flask_pymongo import PyMongo
 from flask_bcrypt import Bcrypt
 from bson.objectid import ObjectId
-from forms import LoginForm, RegisterForm, CreateWorkoutForm
+from forms import LoginForm, RegisterForm, CreateWorkoutForm, EditWorkoutForm
 if path.exists("env.py"):
     import env
 
@@ -85,7 +85,25 @@ def logout():
 
 @app.route('/create-workout')
 def create_workout():
-    return render_template('create-workout.html')
+    create_workout_form = CreateWorkoutForm()
+
+    if create_workout_form.validate_on_submit():
+        get_workouts.insert_one({
+            'username': session['username'],
+            'date': create_workout_form.date.data,
+            'location_name': create_workout_form.location_name.data,
+            'focus_name': create_workout_form.focus_name.data,
+            'part_a': create_workout_form.part_a.data,
+            'part_b': create_workout_form.part_b.data,
+            'part_c': create_workout_form.part_c.data,
+            'accessory': create_workout_form.accessory.data,
+            'additional_info': create_workout_form.additional_info.data,
+            'coach_notes': create_workout_form.coach_notes.data,
+            'public_workout': create_workout_form.public_workout.data,
+        })
+        flash(f'Workout added.', 'primary')
+        return redirect(url_for('index'))
+    return render_template('create-workout.html', title='Create Workout', form=create_workout_form)
 
 
 @app.route('/my-workouts')
