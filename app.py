@@ -106,14 +106,14 @@ def create_workout():
             'public_workout': create_workout_form.public_workout.data,
         })
         flash(f'Workout added.', 'primary')
-        return redirect(url_for('index'))
+        return redirect(url_for('index', title='Workout Added'))
 
     return render_template('create-workout.html', form=create_workout_form)
 
 
 @app.route('/my-workouts')
 def my_workouts():
-    return render_template('my-workouts.html')
+    return render_template('my-workouts.html', workouts=mongo.db.workouts.find())
 
 
 @app.route('/workout-view/<workout_id>', methods=['GET', 'POST'])

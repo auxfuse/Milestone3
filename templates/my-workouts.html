@@ -1,16 +1,52 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="container content">
-        <div class="row">
-            <div class="col-sm-12 text-center">
-                <h1>My Sessions</h1>
+    <section class="about">
+        <div class="container content">
+            <div class="row">
+                <div class="col-sm-12 about-title text-center">
+                    <h2>My Workouts</h2>
+                </div>
             </div>
-        <!-- Display username to user upon successful login -->
-        {% if 'username' in session %}
-            <div class="col-sm-12 greeting text-center">
-                <p>Welcome, {{ session['username'] }}</p>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <p class="page-desc">This page contains a list of all the workouts you have created! You will be
+                        able to record any details of your workout; from the movements done, rep ranges and weights hit and any coaching
+                        notes you got during the session. Overtime the hope will be that coaches use this option to
+                        create workouts tailored for that you can login to see here. Exciting Stuff!</p>
+                    <p class="page-help">Each card below contains some top level information for the session contained
+                        within. To see the full session information, hover over the card and click or tap to be brought
+                        to the full session view.</p>
+                </div>
             </div>
-        {% endif %}
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <img class="img-fluid" src="{{ url_for('static', filename='images/oly-track-large-logo.png') }}"
+                         alt="Large Brand Logo">
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <section id="public-workout-list">
+        <div class="container">
+            <div class="row public-cards-row">
+                {% for workout in workouts %}
+                    {% if workout.username == session['username'] %}
+                        <div class="col-sm-12 col-md-6 public-cards card">
+                            <div class="card-body public-cards-body text-center">
+                                <!-- Anchor & Empty span overlay to allow user to click anywhere on card to be brought to full view -->
+                                <a href="{{ url_for('workout_view', workout_id=workout._id) }}">
+                                    <span class="div-url-overlay"></span>
+                                </a>
+                                <p class="card-text"><span class="pc-label">Focus:</span> {{ workout.focus_name }}</p>
+                                <p class="card-text"><span class="pc-label">Part A:</span> {{ workout.part_a }}</p>
+                                <p class="card-text"><span class="pc-label">Accessory:</span> {{ workout.accessory }}
+                                </p>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
 {% endblock %}
