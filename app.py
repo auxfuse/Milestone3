@@ -130,6 +130,11 @@ def edit_workout():
     return render_template('edit-workout.html')
 
 
+@app.route('/delete-workout/<workout_id>', methods=['GET', 'POST'])
+def delete_workout(workout_id):
+
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP', '127.0.0.1'),
             port=os.environ.get('PORT', '5000'),

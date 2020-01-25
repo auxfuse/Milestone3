@@ -4,17 +4,17 @@
         <div class="container content">
             <div class="row">
                 <div class="col-sm-12 about-title text-center">
-                    <h2>Workout Details</h2>
+                    <h2>Delete Workout</h2>
                 </div>
             </div>
             <div class="row">
                 <div class="col-sm-12 text-center">
-                    <p class="page-desc">This section is dedicated to any users out there that may not want to utilise this
-                        app to its fullest purpose, in that you may not want to track your workouts at all. That's fine, we
-                        got you covered! Here are all the details relating to the workout you just clicked on!</p>
-                    <p class="page-desc">This section is dedicated to any users out there that may not want to utilise this
-                        app to its fullest purpose, in that you may not want to track your workouts at all. That's fine, we
-                        got you covered! Here are all the details relating to the workout you just clicked on!</p>
+                    <p class="page-desc">Hi {{ session['username'] }}, please note that you have clicked to delete the
+                        below workout from the database! This is an irreversible, non-refundable, once only
+                        action.....</p>
+                    <p class="page-desc">To delete the workout below, please type your username into the field
+                        underneath the workout details! Once you hit submit, all of these details will be gone
+                        forever.</p>
                 </div>
             </div>
             <div class="row">
@@ -28,13 +28,15 @@
 
     <section id="workout-details">
         <div class="container">
-            <div class="row workout-view-row">
+            <div class="row delete-workout-row">
                 <div class="col-sm-12 workout-view-card card">
                     <div class="card-body workout-card-body text-center">
                         <h5 class="card-title wcb-title">Detail</h5>
-                        <p class="card-text wc-text"><span class="wd-label">Created by: </span>{{ workout.username }}</p>
+                        <p class="card-text wc-text"><span class="wd-label">Created by: </span>{{ workout.username }}
+                        </p>
                         <p class="card-text wc-text"><span class="wd-label">Date: </span>{{ workout.date }}</p>
-                        <p class="card-text wc-text"><span class="wd-label">Location: </span>{{ workout.location_name }}</p>
+                        <p class="card-text wc-text"><span class="wd-label">Location: </span>{{ workout.location_name }}
+                        </p>
                         <p class="card-text wc-text"><span class="wd-label">Focus: </span>{{ workout.focus_name }}</p>
                     </div>
                     <div class="card-body workout-card-body text-center">
@@ -42,17 +44,17 @@
                         <p class="card-text wc-text"><span class="wd-label">Part A: </span>{{ workout.part_a }}</p>
                         <p class="card-text wc-text"><span class="wd-label">Part B: </span>{{ workout.part_b }}</p>
                         <p class="card-text wc-text"><span class="wd-label">Part C: </span>{{ workout.part_c }}</p>
-                        <p class="card-text wc-text"><span class="wd-label">Accessory: </span>{{ workout.accessory }}</p>
+                        <p class="card-text wc-text"><span class="wd-label">Accessory: </span>{{ workout.accessory }}
+                        </p>
                     </div>
                     <div class="card-body workout-card-body text-center">
                         <h5 class="card-title wcb-title">Additional</h5>
-                        <p class="card-text wc-text"><span class="wd-label">Additional Info: </span>{{ workout.additional_info }}</p>
-                        <p class="card-text wc-text"><span class="wd-label">Coach Notes: </span>{{ workout.coach_notes }}</p>
-                        {% if 'username' in session and workout.username == session['username'] %}
-                            <a href="{{ url_for('delete_workout') }}" class="btn btn-primary">Delete</a>
-                            <a href="{{ url_for('edit_workout') }}" class="btn btn-primary">Edit</a>
-                        {% endif %}
+                        <p class="card-text wc-text"><span
+                                class="wd-label">Additional Info: </span>{{ workout.additional_info }}</p>
+                        <p class="card-text wc-text"><span
+                                class="wd-label">Coach Notes: </span>{{ workout.coach_notes }}</p>
                     </div>
+                    <!-- Add input field here to capture username for confirmation of deletion -->
                 </div>
 
             </div>
