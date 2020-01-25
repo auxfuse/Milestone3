@@ -11,13 +11,16 @@
                 <div class="col-sm-12 text-center">
                     <!-- Defensive element to hide core paragraphs in case user navigates to this page via browser url -->
                     {% if 'username' in session %}
-                        <p class="page-desc">Hi, {{ session['username'] }}, below you will find one of your previously created workouts
-                            that you can now edit. Apart from your username, all of the below are editable & customisable to suit any new
-                        information you need to add.</p>
-                        <p class="page-help">Click/Tap into any of the fields below to add your information. Some fields are completely
-                            text based and require you to type the information needed, others are dropdown fields to assist in
-                        categorizing your workouts into various filters, location for example.</p>
-                        <p class="page-help">When finished, hit the submit button to save your workout for you to reference later!</p>
+                        <p class="page-desc">Hi {{ session['username'] }}, below you will find one of your previously
+                            created workouts that you can now edit. Apart from your username, all of the below are editable &
+                            customisable to suit any new information you need to add.</p>
+                        <p class="page-help">Click/Tap into any of the fields below to add your information. Some fields
+                            are completely
+                            text based and require you to type the information needed, others are dropdown fields to
+                            assist in
+                            categorizing your workouts into various filters, location for example.</p>
+                        <p class="page-help">When finished, hit the submit button to save your workout for you to
+                            reference later!</p>
                     {% else %}
                         <p class="page-help">You are not logged in to view this page. Please Login.</p>
                     {% endif %}
@@ -33,17 +36,17 @@
     </section>
 
     <!-- Defensive element of Section hidden if user is not logged in. -->
-{% if 'username' in session %}
-    <section id="edit-workout">
-        <div class="container">
-            <div class="row workout-view-row">
+    {% if 'username' in session %}
+        <section id="edit-workout">
+            <div class="container">
+                <div class="row workout-view-row">
                     <div class="col-sm-12 text-center">
                         <p class="page-help">Success</p>
                     </div>
+                </div>
             </div>
-        </div>
-    </section>
-{% else %}
-    <div id="restricted-access"></div>
-{% endif %}
+        </section>
+    {% else %}
+        <div id="restricted-access"></div>
+    {% endif %}
 {% endblock %}
