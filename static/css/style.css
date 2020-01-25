@@ -344,9 +344,9 @@ footer .row {
     margin-bottom: 0.5rem;
 }
 
-/* Login & Registration */
+/* Login, Registration, Create Workout & Edit Workout Forms */
 
-.login-form, .register-form {
+.login-form, .register-form, .create-workout-form {
     margin: 1rem;
     background: #ffffff;
     border: 1px solid rgba(0,0,0, 0.125);
@@ -355,7 +355,7 @@ footer .row {
     min-width: 0;
 }
 
-.login-header:after, .register-header:after {
+.login-header:after, .register-header:after, .create-header:after {
     content: '';
     display: block;
     height: 1px;
@@ -364,7 +364,7 @@ footer .row {
     background: #545479;
 }
 
-.login-form-row, .register-form-row {
+.login-form-row, .register-form-row, .create-workout-row {
     justify-content: center;
 }
 
@@ -374,10 +374,11 @@ footer .row {
     margin-bottom: 0;
 }
 
-.login-btn, .register-btn {
+.login-btn, .register-btn, .create-btn {
     margin-top: 0.5rem;
 }
 
+/* Login */
     /* Only on Login page, styled link to navigate user to registration page */
 .register-link {
     margin-bottom: 1rem;
@@ -391,6 +392,13 @@ footer .row {
     text-decoration: none;
     padding: 5px;
     border-bottom: 1px solid #545479;
+}
+
+/* Create Workout */
+
+#public_workout {
+    width: 1rem;
+    height: 1rem;
 }
 
 /* Media Queries */
@@ -422,7 +430,7 @@ footer .row {
     }
 
     /* Login & Registration forms size constraint for larger devices */
-    .login-form, .register-form {
+    .login-form, .register-form, .create-workout-form {
         max-width: 60%;
     }
 }
