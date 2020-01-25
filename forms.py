@@ -20,8 +20,8 @@ class RegisterForm(FlaskForm):
 
 class CreateWorkoutForm(FlaskForm):
     date = DateField('Date', format='%d/%m/%Y')
-    focus_name = SelectField('Focus')
     location_name = SelectField('Location')
+    focus_name = SelectField('Focus')
     part_a = StringField('Part A')
     part_b = StringField('Part B')
     part_c = StringField('Part C')
@@ -34,8 +34,8 @@ class CreateWorkoutForm(FlaskForm):
 
 class EditWorkoutForm(FlaskForm):
     date = DateField('Date', format='%d-%m-%Y')
-    focus_name = SelectField('Focus')
     location_name = SelectField('Location')
+    focus_name = SelectField('Focus')
     part_a = StringField('Part A')
     part_b = StringField('Part B')
     part_c = StringField('Part C')

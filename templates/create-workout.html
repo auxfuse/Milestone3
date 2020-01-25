@@ -49,6 +49,42 @@
                         {{ form.date.label(class="form-control-label") }}
                         {{ form.date(class="form-control", id="datepicker", required=True) }}
                     </div>
+                    <div class="form-group">
+                        {{ form.focus_name.label(class="form-control-label") }}
+                        {{ form.focus_name(class="form-control", placeholder="Please select", required=True) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.location_name.label(class="form-control-label") }}
+                        {{ form.location_name(class="form-control", placeholder="Please select", required=True) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.part_a.label(class="form-control-label") }}
+                        {{ form.part_a(class="form-control", required=True) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.part_b.label(class="form-control-label") }}
+                        {{ form.part_b(class="form-control", required=True) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.part_c.label(class="form-control-label") }}
+                        {{ form.part_c(class="form-control", required=True) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.accessory.label(class="form-control-label") }}
+                        {{ form.accessory(class="form-control", required=False) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.additional_info.label(class="form-control-label") }}
+                        {{ form.additional_info(class="form-control", required=False) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.coach_notes.label(class="form-control-label") }}
+                        {{ form.coach_notes(class="form-control", required=False) }}
+                    </div>
+                    <div class="form-group">
+                        {{ form.public_workout.label(class="form-control-label") }}
+                        {{ form.public_workout(class="form-control", required=True) }}
+                    </div>
                 </form>
             </div>
         </div>

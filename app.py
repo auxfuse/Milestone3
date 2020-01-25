@@ -83,9 +83,15 @@ def logout():
     return redirect(url_for('index'))
 
 
-@app.route('/create-workout')
+@app.route('/create-workout', methods=['GET', 'POST'])
 def create_workout():
     create_workout_form = CreateWorkoutForm()
+
+    focus_type = mongo.db.focus_type.distinct('focus_name')
+    print(type(focus_type))
+    print(focus_type)
+
+    create_workout_form.focus_name.choices = [('', 'Please select')] + [(focus, focus) for focus in focus_type]
 
     if create_workout_form.validate_on_submit():
         get_workouts.insert_one({
