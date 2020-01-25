@@ -107,6 +107,7 @@ def create_workout():
         })
         flash(f'Workout added.', 'primary')
         return redirect(url_for('index'))
+
     return render_template('create-workout.html', form=create_workout_form)
 
 

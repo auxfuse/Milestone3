@@ -29,7 +29,7 @@ class CreateWorkoutForm(FlaskForm):
     additional_info = StringField('Additional Info')
     coach_notes = StringField('Coach Notes')
     public_workout = BooleanField('Public')
-    create = SubmitField('Create')
+    submit = SubmitField('Create')
 
 
 class EditWorkoutForm(FlaskForm):
@@ -43,5 +43,5 @@ class EditWorkoutForm(FlaskForm):
     additional_info = StringField('Additional Info')
     coach_notes = StringField('Coach Notes')
     public_workout = BooleanField('Public')
-    update = SubmitField('Update')
+    submit = SubmitField('Update')
 
