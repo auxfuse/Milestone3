@@ -40,7 +40,7 @@
                 <div class="row edit-workout-row">
                     <div class="col-sm-12 edit-workout-form">
                         <h2 class="edit-header text-center">Edit Workout</h2>
-                        <form action="{{ url_for('update_workout', workout_id=workout._id)}}" method="POST">
+                        <form action="" method="POST">
                             <!-- hidden_tag needed to protect against CSRF (cross-site request forgery) attacks in conjunction with our secret key. -->
                             {{ form.hidden_tag() }}
 
