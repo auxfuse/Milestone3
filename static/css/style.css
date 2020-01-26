@@ -148,8 +148,7 @@ footer .row {
 }
 
     /* Darkened sections to provide tone opposition to content above ~ change all to common class name */
-#home-actions, #fundamentals-list, #workout-details, #public-workout-list, #create-workout,
-#edit-workout, #restricted-access, #login, #registration, #empty-content-404 {
+.lower-section {
     background: #323232;
     border-top: 1px solid rgba(0,0,0, 0.5);
     display: flex;
