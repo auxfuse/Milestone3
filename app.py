@@ -135,11 +135,13 @@ def delete_workout(workout_id):
     my_workout = get_workouts.find_one({'_id': ObjectId(workout_id)})
 
     delete_workout_form = DeleteForm()
-    if delete_workout_form.validate_on_submit():
+    if request.method == 'POST':
         if session['username'] == request.form.get('username'):
-            my_workout.delete_one({'_id': ObjectId(workout_id)})
+            get_workouts.remove({'_id': ObjectId(workout_id)})
+            flash(f'Workout removed.', 'primary')
+            return redirect(url_for('index', title='Workout Removed'))
 
-    return render_template('delete-workout.html', workout=my_workout)
+    return render_template('delete-workout.html', workout=my_workout, form=delete_workout_form)
 
 
 if __name__ == '__main__':

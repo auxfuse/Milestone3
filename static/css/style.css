@@ -344,9 +344,9 @@ footer .row {
     margin-bottom: 0.5rem;
 }
 
-/* Login, Registration, Create Workout & Edit Workout Forms ~ move to global */
+/* Login, Registration, Create Workout, Edit Workout & Delete Workout Forms ~ move to global */
 
-.login-form, .register-form, .create-workout-form {
+.login-form, .register-form, .create-workout-form, .delete-workout-form {
     margin: 1rem;
     background: #ffffff;
     border: 1px solid rgba(0,0,0, 0.125);
@@ -355,7 +355,8 @@ footer .row {
     min-width: 0;
 }
 
-.login-header:after, .register-header:after, .create-header:after {
+.login-header:after, .register-header:after,
+.create-header:after, .delete-header:after {
     content: '';
     display: block;
     height: 1px;
@@ -364,7 +365,8 @@ footer .row {
     background: #545479;
 }
 
-.login-form-row, .register-form-row, .create-workout-row {
+.login-form-row, .register-form-row,
+.create-workout-row, .delete-workout-row {
     justify-content: center;
 }
 
@@ -374,7 +376,7 @@ footer .row {
     margin-bottom: 0;
 }
 
-.login-btn, .register-btn, .create-btn {
+.login-btn, .register-btn, .create-btn, .delete-btn {
     margin-top: 0.5rem;
 }
 
@@ -429,9 +431,15 @@ footer .row {
         max-width: 30rem;
     }
 
-    /* Login & Registration forms size constraint for larger devices */
-    .login-form, .register-form, .create-workout-form {
+    /* Size constraint for application forms for larger devices */
+    .login-form, .register-form,
+    .create-workout-form {
         max-width: 60%;
+    }
+
+    .del-confirm-username-label, .del-confirm-username {
+        max-width: 60%;
+        margin: 0 auto;
     }
 }
 

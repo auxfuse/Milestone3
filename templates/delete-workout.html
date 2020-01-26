@@ -13,7 +13,7 @@
                         below workout from the database! This is an irreversible, non-refundable, once only
                         action.....</p>
                     <p class="page-desc">To delete the workout below, please type your username into the field
-                        underneath the workout details! Once you hit submit, all of these details will be gone
+                        underneath the workout details! Once you hit Delete, all of these details will be gone
                         forever.</p>
                 </div>
             </div>
@@ -54,9 +54,21 @@
                         <p class="card-text wc-text"><span
                                 class="wd-label">Coach Notes: </span>{{ workout.coach_notes }}</p>
                     </div>
-                    <!-- Add input field here to capture username for confirmation of deletion -->
                 </div>
+                <div class="col-sm-12 delete-workout-form">
+                    <h2 class="delete-header text-center">Confirm Delete</h2>
+                    <form action="" method="POST">
+                        <!-- hidden_tag needed to protect against CSRF (cross-site request forgery) attacks in conjunction with our secret key. -->
+                        {{ form.hidden_tag() }}
 
+                        <div class="form-group">
+{#                            {{ form.username.label(class="form-control-label del-confirm-username-label") }}#}
+                            {{ form.username(class="form-control del-confirm-username", placeholder="Type username to confirm", required=false) }}
+                        </div>
+                        <div class="form-group text-center">
+                            {{ form.submit(class="btn btn-danger delete-btn") }}
+                        </div>
+                    </form>
             </div>
         </div>
     </section>
