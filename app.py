@@ -188,7 +188,8 @@ def delete_workout(workout_id):
 
 
 @app.errorhandler(404)
-def handle_404(exception):
+def response_404(exception):
+    """When 404 is captured display custom 404.html page"""
     return render_template('404.html', exception=exception)
 
 
