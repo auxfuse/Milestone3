@@ -104,7 +104,7 @@ def create_workout():
             'public_workout': create_workout_form.public_workout.data,
         })
         flash(f'Workout added.', 'primary')
-        return redirect(url_for('index', title='Workout Added'))
+        return redirect(url_for('my_workouts', title='Workout Added'))
 
     focus_type = mongo.db.focus_type.distinct('focus_name')
     create_workout_form.focus_name.choices = [('', 'Please select')] + [(focus, focus) for focus in focus_type]
@@ -150,7 +150,7 @@ def edit_workout(workout_id):
                                          'public_workout': edit_workout_form.public_workout.data,
                                      }})
         flash(f'Workout updated', 'primary')
-        return redirect(url_for('index', title='Workout updated'))
+        return redirect(url_for('my_workouts', title='Workout updated'))
     elif request.method == 'GET':
         edit_workout_form.location_name.data = workout['location_name']
         edit_workout_form.focus_name.data = workout['focus_name']
@@ -162,7 +162,7 @@ def edit_workout(workout_id):
         edit_workout_form.coach_notes.data = workout['coach_notes']
         edit_workout_form.public_workout.data = workout['public_workout']
     else:
-        flash(f'Something went wrong...', 'primary')
+        flash(f'Something went wrong...Workout not updated.', 'primary')
         return redirect(url_for('my_workouts', title='Error during Update'))
 
     return render_template('edit-workout.html', workout=workout, form=edit_workout_form)
@@ -177,9 +177,9 @@ def delete_workout(workout_id):
         if session['username'] == request.form.get('username'):
             get_workouts.remove({'_id': ObjectId(workout_id)})
             flash(f'Workout removed.', 'primary')
-            return redirect(url_for('index', title='Workout Removed'))
+            return redirect(url_for('my_workouts', title='Workout Removed'))
         flash(f'Wrong username submitted for Delete confirmation', 'primary')
-        return redirect(url_for('index', title='Not your workout.'))
+        return redirect(url_for('my_workouts', title='Not your workout.'))
 
     return render_template('delete-workout.html', workout=my_workout, form=delete_workout_form)
 

@@ -28,6 +28,20 @@
                          alt="Large Brand Logo">
                 </div>
             </div>
+            <div class="row">
+                <div class="col-sm-12 text-center crud-alerts">
+                    <!-- Alert to user notifying of successful/unsuccessful actions. -->
+                    {% with alerts = get_flashed_messages(with_categories=true) %}
+                        {% if alerts %}
+                            {% for category, alert in alerts %}
+                                <div class="alert alert-{{ category }}">
+                                    {{ alert }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                </div>
+            </div>
         </div>
     </section>
 
