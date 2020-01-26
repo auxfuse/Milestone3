@@ -35,7 +35,7 @@
     {% if 'username' in session %}
         <section class="lower-section">
             <div class="container">
-                <div class="row delete-workout-row">
+                <div class="row custom-form-row">
                     <div class="col-sm-12 workout-view-card card">
                         <div class="card-body workout-card-body text-center">
                             <h5 class="card-title wcb-title">Detail</h5>
@@ -66,8 +66,8 @@
                                     class="wd-label">Coach Notes: </span>{{ workout.coach_notes }}</p>
                         </div>
                     </div>
-                    <div class="col-sm-12 delete-workout-form">
-                        <h2 class="delete-header text-center">Confirm Delete</h2>
+                    <div class="col-sm-12 custom-form">
+                        <h2 class="custom-form-header text-center">Confirm Delete</h2>
                         <form action="" method="POST">
                             <!-- hidden_tag needed to protect against CSRF (cross-site request forgery) attacks in conjunction with our secret key. -->
                             {{ form.hidden_tag() }}
@@ -76,7 +76,7 @@
                                 {{ form.username(class="form-control del-confirm-username", placeholder="Type username to confirm", required=false) }}
                             </div>
                             <div class="form-group text-center">
-                                {{ form.submit(class="btn btn-danger delete-btn") }}
+                                {{ form.submit(class="btn btn-danger custom-form-btn") }}
                             </div>
                         </form>
                     </div>

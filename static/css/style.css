@@ -142,18 +142,97 @@ footer .row {
 
 /* Global page elements such as titles, desc & rows etc */
 
+    /* About (upper) section per page */
+.about {
+    margin: 1.25rem;
+}
+
+.about-title {
+    text-decoration: underline;
+    margin: 10px 0;
+}
+
+.page-desc {
+    font-family: "Roboto", sans-serif;
+    margin: 10px 0;
+}
+
+.page-help {
+    color: #545479;
+    font-style: italic;
+}
+
 .content {
     margin: 75px auto 0;
     flex: 1;
 }
 
-    /* Darkened sections to provide tone opposition to content above ~ change all to common class name */
+    /* Darkened sections to provide tone opposition to content above */
 .lower-section {
     background: #323232;
     border-top: 1px solid rgba(0,0,0, 0.5);
     display: flex;
     flex: 1;
     align-items: center;
+}
+
+    /* Custom Forms */
+.custom-form-row {
+    justify-content: center;
+}
+
+.custom-form {
+    margin: 1rem;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0, 0.125);
+    border-radius: 0.25rem;
+    background-clip: border-box;
+    min-width: 0;
+}
+
+.custom-form-header:after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 60%;
+    margin: 5px auto;
+    background: #545479;
+}
+
+.form-control-label {
+    font-family: "Maven Pro", sans-serif;
+    font-style: italic;
+    margin-bottom: 0;
+}
+
+.custom-form-btn {
+    margin-top: 0.5rem;
+}
+
+    /* Override Bootstrap btn styles */
+    /* Custom styles overwriting bootstrap user agent styles for primary button */
+.btn-primary {
+    background-color: #aae1d8;
+    font-family: "Maven Pro", sans-serif;
+    color: #000000;
+    border: 1px solid #545479;
+}
+
+    /* Custom styles to target the hover, active & focus state of the button to show when user performs action */
+.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
+    background-color: #84afa6;
+    color: #000000;
+    font-weight: bold;
+    border: 1px solid #7777ab;
+}
+
+    /* Used devtools to understand why button was keeping default bootstrap styles */
+    /* Added below custom style to ensure project color scheme is adhered to */
+.btn-primary:not(:disabled):not(.disabled):active {
+    background-color: #84afa6;
+    color: #000000;
+    font-weight: bold;
+    border: 1px solid #7777ab;
 }
 
 /* Index (Home) */
@@ -185,26 +264,12 @@ footer .row {
     position: absolute;
 }
 
-    /* About section ~ move up to global */
-.about {
-    margin: 1.25rem;
-}
-
-.about-title {
-    text-decoration: underline;
-    margin: 10px 0;
-}
-
 .greeting {
     font-family: "Roboto", sans-serif;
     font-size: 1.4rem;
     border-bottom: 1px solid #000000;
     border-radius: 0;
     margin-bottom: 0.8rem;
-}
-
-.home-about-desc {
-    font-family: "Roboto", sans-serif;
 }
 
     /* Home-actions styles */
@@ -228,38 +293,8 @@ footer .row {
     background: #545479;
 }
 
-    /* Custom styles overwriting bootstrap user agent styles for primary button */
-.btn-primary {
-    background-color: #aae1d8;
-    font-family: "Maven Pro", sans-serif;
-    color: #000000;
-    border: 1px solid #545479;
-}
-
-    /* Custom styles to target the hover, active & focus state of the button to show when user performs action */
-.btn-primary:hover, .btn-primary:active, .btn-primary:focus {
-    background-color: #84afa6;
-    color: #000000;
-    font-weight: bold;
-    border: 1px solid #7777ab;
-}
-
-    /* Used devtools to understand why button was keeping default bootstrap styles */
-    /* Added below custom style to ensure project color scheme is adhered to */
-.btn-primary:not(:disabled):not(.disabled):active {
-    background-color: #84afa6;
-    color: #000000;
-    font-weight: bold;
-    border: 1px solid #7777ab;
-}
-
 /* Fundamentals */
 
-.page-desc {
-    margin: 10px 0;
-}
-
-    /* Fundamentals Cards */
 .movements-row {
     justify-content: center;
 }
@@ -279,11 +314,6 @@ footer .row {
 }
 
 /* Public Workouts */
-
-.page-help {
-    color: #545479;
-    font-style: italic;
-}
 
 .public-cards-row {
     justify-content: center;
@@ -343,42 +373,6 @@ footer .row {
     margin-bottom: 0.5rem;
 }
 
-/* Login, Registration, Create Workout, Edit Workout & Delete Workout Forms ~ move to global */
-.login-form-row, .register-form-row,
-.create-workout-row, .delete-workout-row, .edit-workout-row {
-    justify-content: center;
-}
-
-.login-form, .register-form, .create-workout-form,
-.delete-workout-form, .edit-workout-form {
-    margin: 1rem;
-    background: #ffffff;
-    border: 1px solid rgba(0,0,0, 0.125);
-    border-radius: 0.25rem;
-    background-clip: border-box;
-    min-width: 0;
-}
-
-.login-header:after, .register-header:after,
-.create-header:after, .delete-header:after, .edit-header:after {
-    content: '';
-    display: block;
-    height: 1px;
-    width: 60%;
-    margin: 5px auto;
-    background: #545479;
-}
-
-.form-control-label {
-    font-family: "Maven Pro", sans-serif;
-    font-style: italic;
-    margin-bottom: 0;
-}
-
-.login-btn, .register-btn, .create-btn, .delete-btn, .edit-btn {
-    margin-top: 0.5rem;
-}
-
 /* Login */
     /* Only on Login page, styled link to navigate user to registration page */
 .register-link {
@@ -431,12 +425,11 @@ footer .row {
     }
 
     /* Size constraint for application forms for larger devices */
-    .login-form, .register-form,
-    .create-workout-form, .edit-workout-form {
+    .custom-form {
         max-width: 60%;
     }
 
-    .del-confirm-username-label, .del-confirm-username {
+    .del-confirm-username {
         max-width: 60%;
         margin: 0 auto;
     }

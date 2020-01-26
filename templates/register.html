@@ -39,9 +39,9 @@
     {% else %}
         <section class="lower-section">
             <div class="container">
-                <div class="row register-form-row">
-                    <div class="col-sm-12 register-form">
-                        <h2 class="register-header text-center">Register</h2>
+                <div class="row custom-form-row">
+                    <div class="col-sm-12 custom-form">
+                        <h2 class="custom-form-header text-center">Register</h2>
                         <!-- Alert to user that duplicate username has been detected. -->
                         <div class="text-center">
                             {% with alerts = get_flashed_messages(with_categories=true) %}
@@ -115,7 +115,7 @@
                                 {% endif %}
                             </div>
                             <div class="form-group text-center">
-                                {{ form.submit(class="btn btn-primary register-btn") }}
+                                {{ form.submit(class="btn btn-primary custom-form-btn") }}
                             </div>
                         </form>
                     </div>

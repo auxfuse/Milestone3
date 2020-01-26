@@ -40,9 +40,9 @@
     {% else %}
         <section class="lower-section">
             <div class="container">
-                <div class="row login-form-row">
-                    <div class="col-sm-12 login-form">
-                        <h2 class="login-header text-center">Login</h2>
+                <div class="row custom-form-row">
+                    <div class="col-sm-12 custom-form">
+                        <h2 class="custom-form-header text-center">Login</h2>
                         <!-- Alert to user that username or password incorrect. -->
                         <div class="text-center">
                             {% with alerts = get_flashed_messages(with_categories=true) %}
@@ -97,7 +97,7 @@
                             </div>
 
                             <div class="form-group text-center">
-                                {{ form.submit(class="btn btn-primary login-btn") }}
+                                {{ form.submit(class="btn btn-primary custom-form-btn") }}
                             </div>
                         </form>
 

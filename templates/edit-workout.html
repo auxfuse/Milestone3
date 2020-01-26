@@ -37,9 +37,9 @@
     {% if 'username' in session %}
         <section class="lower-section">
             <div class="container">
-                <div class="row edit-workout-row">
-                    <div class="col-sm-12 edit-workout-form">
-                        <h2 class="edit-header text-center">Edit Workout</h2>
+                <div class="row custom-form-row">
+                    <div class="col-sm-12 custom-form">
+                        <h2 class="custom-form-header text-center">Edit Workout</h2>
                         <form action="" method="POST">
                             <!-- hidden_tag needed to protect against CSRF (cross-site request forgery) attacks in conjunction with our secret key. -->
                             {{ form.hidden_tag() }}
@@ -81,7 +81,7 @@
                                 {{ form.public_workout(class="form-control", required=False) }}
                             </div>
                             <div class="form-group text-center">
-                                {{ form.submit(class="btn btn-primary edit-btn") }}
+                                {{ form.submit(class="btn btn-primary custom-form-btn") }}
                             </div>
                         </form>
                     </div>
