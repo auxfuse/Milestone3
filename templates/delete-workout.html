@@ -9,12 +9,17 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 text-center">
-                    <p class="page-desc">Hi {{ session['username'] }}, please note that you have clicked to delete the
-                        below workout from the database! This is an irreversible, non-refundable, once only
-                        action.....</p>
-                    <p class="page-help">To delete the workout below, please type your username into the field
-                        underneath the workout details! Once you hit Delete, all of these details will be gone
-                        forever.</p>
+                    <!-- Defensive element to hide core paragraphs in case user navigates to this page via browser url -->
+                    {% if 'username' in session %}
+                        <p class="page-desc">Hi {{ session['username'] }}, please note that you have clicked to delete the
+                            below workout from the database! This is an irreversible, non-refundable, once only
+                            action.....</p>
+                        <p class="page-help">To delete the workout below, please type your username into the field
+                            underneath the workout details! Once you hit Delete, all of these details will be gone
+                            forever.</p>
+                    {% else %}
+                        <p class="page-help">You are not logged in to view this page. Please Login.</p>
+                    {% endif %}
                 </div>
             </div>
             <div class="row">
