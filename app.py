@@ -129,11 +129,12 @@ def workout_view(workout_id):
 def edit_workout(workout_id):
     edit_workout_form = EditWorkoutForm()
     workout = get_workouts.find_one_or_404({'_id': ObjectId(workout_id)})
-    print(workout)
+    # Show dropdown values from collection databases for focus_type & location_name
     focus_type = mongo.db.focus_type.distinct('focus_name')
     edit_workout_form.focus_name.choices = [('', 'Please select')] + [(focus, focus) for focus in focus_type]
     location_type = mongo.db.location.distinct('location_name')
     edit_workout_form.location_name.choices = [('', 'Please select')] + [(locale, locale) for locale in location_type]
+
     if edit_workout_form.validate_on_submit():
         get_workouts.update_one({'_id': ObjectId(workout_id)},
                                 {'$set':
@@ -162,7 +163,7 @@ def edit_workout(workout_id):
         edit_workout_form.public_workout.data = workout['public_workout']
     else:
         flash(f'Something went wrong...', 'primary')
-        return redirect(url_for('my_workouts', title='Error Updating'))
+        return redirect(url_for('my_workouts', title='Error during Update'))
 
     return render_template('edit-workout.html', workout=workout, form=edit_workout_form)
 
@@ -177,6 +178,8 @@ def delete_workout(workout_id):
             get_workouts.remove({'_id': ObjectId(workout_id)})
             flash(f'Workout removed.', 'primary')
             return redirect(url_for('index', title='Workout Removed'))
+        flash(f'Wrong username submitted for Delete confirmation', 'primary')
+        return redirect(url_for('index', title='Not your workout.'))
 
     return render_template('delete-workout.html', workout=my_workout, form=delete_workout_form)
 
