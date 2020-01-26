@@ -5,7 +5,7 @@ from flask import Flask, render_template, redirect, request, url_for, session, f
 from flask_pymongo import PyMongo
 from flask_bcrypt import Bcrypt
 from bson.objectid import ObjectId
-from forms import LoginForm, RegisterForm, CreateWorkoutForm, EditWorkoutForm
+from forms import LoginForm, RegisterForm, CreateWorkoutForm, EditWorkoutForm, DeleteForm
 if path.exists("env.py"):
     import env
 
@@ -132,7 +132,14 @@ def edit_workout():
 
 @app.route('/delete-workout/<workout_id>', methods=['GET', 'POST'])
 def delete_workout(workout_id):
+    my_workout = get_workouts.find_one({'_id': ObjectId(workout_id)})
 
+    delete_workout_form = DeleteForm()
+    if delete_workout_form.validate_on_submit():
+        if session['username'] == request.form.get('username'):
+            my_workout.delete_one({'_id': ObjectId(workout_id)})
+
+    return render_template('delete-workout.html', workout=my_workout)
 
 
 if __name__ == '__main__':

@@ -43,3 +43,7 @@ class EditWorkoutForm(FlaskForm):
     public_workout = BooleanField('Public')
     submit = SubmitField('Update')
 
+
+class DeleteForm(FlaskForm):
+    username = StringField('username')
+    submit = SubmitField('Delete')
