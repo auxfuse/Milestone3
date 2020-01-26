@@ -41,10 +41,10 @@
                         but it can also be used to track any fitness session from Crossfit - Powerlifting and everything
                         in between.</p>
                     <p class="page-desc">It was designed with ease of use and access in mind. Currently, as an aspiring Competitive
-                        Olympic Weightlifter, I often find myself forgetting to bring along my Session journal and by
+                        Olympic Weightlifter, I often find myself forgetting to bring along my Workout journal and by
                         the time I get it, I have forgotten the rep schemes, movements and the weights lifted. You never
                         forget your phone....so why not use a tool that is always readily available in your pocket to
-                        sit down in the middle of a session and record what you just did for that day? Enter
+                        sit down in the middle of a Workout and record what you just did? Enter
                         Oly-Track!</p>
                 </div>
             </div>
@@ -73,12 +73,12 @@
                 <div class="card home-card-actions col-md-12 col-lg-4">
                     <div class="card-body text-center">
                         <h5 class="card-title hca-title">See Public Sessions</h5>
-                        <p class="card-text">Need a session quick? Or maybe you are just beginning and are wanting to
-                            see what some day to day sessions for you could be?</p>
-                        <p class="card-text hca-p2">This section contains some top industry standard sessions and some
-                            users are generous enough to make their sessions public, so you can see how they
+                        <p class="card-text">Need a workout quick? Or maybe you are just beginning and are wanting to
+                            see what some day to day workouts for you could be?</p>
+                        <p class="card-text hca-p2">This section contains some top industry standard workouts and some
+                            users are generous enough to make their workouts public, so you can see how they
                             trained.</p>
-                        <a href="{{ url_for('show_public_workouts') }}" class="btn btn-primary">Find Session</a>
+                        <a href="{{ url_for('show_public_workouts') }}" class="btn btn-primary">Find Workout</a>
                     </div>
                 </div>
                 <div class="card home-card-actions col-md-12 col-lg-4">
@@ -95,10 +95,10 @@
                             <a href="{{ url_for('logout') }}" class="btn btn-primary">Logout</a>
                         {% else %}
                             <h5 class="card-title hca-title">Login</h5>
-                            <p class="card-text">To keep track of and to only view your sessions/workouts, we recommend
+                            <p class="card-text">To keep track of and to only view your workouts, we recommend
                                 logging in.</p>
-                            <p class="card-text hca-p2">When filling out a session form, you have the option to keep
-                                them private or make them public. Take control of your day-to-day sessions and in time
+                            <p class="card-text hca-p2">When filling out a workout form, you have the option to keep
+                                them private or make them public. Take control of your day-to-day workouts and in time
                                 it will become 2nd nature to login.</p>
                             <a href="{{ url_for('login') }}" class="btn btn-primary">Login</a>
                         {% endif %}
