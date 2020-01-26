@@ -26,50 +26,59 @@
         </div>
     </section>
 
-    <section id="workout-details">
-        <div class="container">
-            <div class="row delete-workout-row">
-                <div class="col-sm-12 workout-view-card card">
-                    <div class="card-body workout-card-body text-center">
-                        <h5 class="card-title wcb-title">Detail</h5>
-                        <p class="card-text wc-text"><span class="wd-label">Created by: </span>{{ workout.username }}
-                        </p>
-                        <p class="card-text wc-text"><span class="wd-label">Date: </span>{{ workout.date }}</p>
-                        <p class="card-text wc-text"><span class="wd-label">Location: </span>{{ workout.location_name }}
-                        </p>
-                        <p class="card-text wc-text"><span class="wd-label">Focus: </span>{{ workout.focus_name }}</p>
+    <!-- Defensive element of Section hidden if user is not logged in. -->
+    {% if 'username' in session %}
+        <section id="workout-details">
+            <div class="container">
+                <div class="row delete-workout-row">
+                    <div class="col-sm-12 workout-view-card card">
+                        <div class="card-body workout-card-body text-center">
+                            <h5 class="card-title wcb-title">Detail</h5>
+                            <p class="card-text wc-text"><span
+                                    class="wd-label">Created by: </span>{{ workout.username }}
+                            </p>
+                            <p class="card-text wc-text"><span class="wd-label">Date: </span>{{ workout.date }}</p>
+                            <p class="card-text wc-text"><span
+                                    class="wd-label">Location: </span>{{ workout.location_name }}
+                            </p>
+                            <p class="card-text wc-text"><span class="wd-label">Focus: </span>{{ workout.focus_name }}
+                            </p>
+                        </div>
+                        <div class="card-body workout-card-body text-center">
+                            <h5 class="card-title wcb-title">Workout</h5>
+                            <p class="card-text wc-text"><span class="wd-label">Part A: </span>{{ workout.part_a }}</p>
+                            <p class="card-text wc-text"><span class="wd-label">Part B: </span>{{ workout.part_b }}</p>
+                            <p class="card-text wc-text"><span class="wd-label">Part C: </span>{{ workout.part_c }}</p>
+                            <p class="card-text wc-text"><span
+                                    class="wd-label">Accessory: </span>{{ workout.accessory }}
+                            </p>
+                        </div>
+                        <div class="card-body workout-card-body text-center">
+                            <h5 class="card-title wcb-title">Additional</h5>
+                            <p class="card-text wc-text"><span
+                                    class="wd-label">Additional Info: </span>{{ workout.additional_info }}</p>
+                            <p class="card-text wc-text"><span
+                                    class="wd-label">Coach Notes: </span>{{ workout.coach_notes }}</p>
+                        </div>
                     </div>
-                    <div class="card-body workout-card-body text-center">
-                        <h5 class="card-title wcb-title">Workout</h5>
-                        <p class="card-text wc-text"><span class="wd-label">Part A: </span>{{ workout.part_a }}</p>
-                        <p class="card-text wc-text"><span class="wd-label">Part B: </span>{{ workout.part_b }}</p>
-                        <p class="card-text wc-text"><span class="wd-label">Part C: </span>{{ workout.part_c }}</p>
-                        <p class="card-text wc-text"><span class="wd-label">Accessory: </span>{{ workout.accessory }}
-                        </p>
-                    </div>
-                    <div class="card-body workout-card-body text-center">
-                        <h5 class="card-title wcb-title">Additional</h5>
-                        <p class="card-text wc-text"><span
-                                class="wd-label">Additional Info: </span>{{ workout.additional_info }}</p>
-                        <p class="card-text wc-text"><span
-                                class="wd-label">Coach Notes: </span>{{ workout.coach_notes }}</p>
+                    <div class="col-sm-12 delete-workout-form">
+                        <h2 class="delete-header text-center">Confirm Delete</h2>
+                        <form action="" method="POST">
+                            <!-- hidden_tag needed to protect against CSRF (cross-site request forgery) attacks in conjunction with our secret key. -->
+                            {{ form.hidden_tag() }}
+
+                            <div class="form-group">
+                                {{ form.username(class="form-control del-confirm-username", placeholder="Type username to confirm", required=false) }}
+                            </div>
+                            <div class="form-group text-center">
+                                {{ form.submit(class="btn btn-danger delete-btn") }}
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <div class="col-sm-12 delete-workout-form">
-                    <h2 class="delete-header text-center">Confirm Delete</h2>
-                    <form action="" method="POST">
-                        <!-- hidden_tag needed to protect against CSRF (cross-site request forgery) attacks in conjunction with our secret key. -->
-                        {{ form.hidden_tag() }}
-
-                        <div class="form-group">
-{#                            {{ form.username.label(class="form-control-label del-confirm-username-label") }}#}
-                            {{ form.username(class="form-control del-confirm-username", placeholder="Type username to confirm", required=false) }}
-                        </div>
-                        <div class="form-group text-center">
-                            {{ form.submit(class="btn btn-danger delete-btn") }}
-                        </div>
-                    </form>
             </div>
-        </div>
-    </section>
+        </section>
+    {% else %}
+        <div id="restricted-access"></div>
+    {% endif %}
 {% endblock %}
