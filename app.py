@@ -6,6 +6,7 @@ from flask_pymongo import PyMongo
 from flask_bcrypt import Bcrypt
 from bson.objectid import ObjectId
 from forms import LoginForm, RegisterForm, CreateWorkoutForm, EditWorkoutForm, DeleteForm
+
 if path.exists("env.py"):
     import env
 
@@ -118,16 +119,39 @@ def my_workouts():
     return render_template('my-workouts.html', workouts=mongo.db.workouts.find())
 
 
-@app.route('/workout-view/<workout_id>', methods=['GET', 'POST'])
+@app.route('/workout-view/<workout_id>')
 def workout_view(workout_id):
-
     my_workout = get_workouts.find_one({'_id': ObjectId(workout_id)})
     return render_template('workout-view.html', workout=my_workout)
 
 
-@app.route('/edit-workout')
-def edit_workout():
-    return render_template('edit-workout.html')
+@app.route('/edit-workout/<workout_id>', methods=['GET', 'POST'])
+def edit_workout(workout_id):
+    my_workout = get_workouts.find_one({'_id': ObjectId(workout_id)})
+    if request.method == 'GET':
+        edit_workout_form = EditWorkoutForm(data=my_workout)
+        return render_template('edit-workout.html', workout=my_workout, form=edit_workout_form)
+
+    edit_workout_form = EditWorkoutForm(request.form)
+    if request.method == 'POST':
+        my_workout.update_one({
+            'id': ObjectId(workout_id),
+        }, {
+            '$set': {
+                'location_name': edit_workout_form.location_name.data,
+                'focus_name': edit_workout_form.focus_name.data,
+                'part_a': edit_workout_form.part_a.data,
+                'part_b': edit_workout_form.part_b.data,
+                'part_c': edit_workout_form.part_c.data,
+                'accessory': edit_workout_form.accessory.data,
+                'additional_info': edit_workout_form.additional_info.data,
+                'coach_notes': edit_workout_form.coach_notes.data,
+                'public_workout': edit_workout_form.public_workout.data,
+            }
+        })
+        flash(f'Workout Updated', 'primary')
+        return redirect(url_for('index', title='Workout Updated'))
+    return render_template('edit-workout.html', workout=my_workout)
 
 
 @app.route('/delete-workout/<workout_id>', methods=['GET', 'POST'])

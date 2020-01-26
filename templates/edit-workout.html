@@ -14,12 +14,10 @@
                         <p class="page-desc">Hi {{ session['username'] }}, below you will find one of your previously
                             created workouts that you can now edit. Apart from your username, all of the below are editable &
                             customisable to suit any new information you need to add.</p>
-                        <p class="page-help">Click/Tap into any of the fields below to add your information. Some fields
-                            are completely
-                            text based and require you to type the information needed, others are dropdown fields to
-                            assist in
-                            categorizing your workouts into various filters, location for example.</p>
-                        <p class="page-help">When finished, hit the submit button to save your workout for you to
+                        <p class="page-help">Click/Tap into any of the fields below to edit your information. Some fields
+                            are completely text based and require you to type the information needed, others are dropdown fields to
+                            assist in categorizing your workouts into various filters, location for example.</p>
+                        <p class="page-help">When finished, hit the update button to save your workout for you to
                             reference later!</p>
                     {% else %}
                         <p class="page-help">You are not logged in to view this page. Please Login.</p>
@@ -37,11 +35,55 @@
 
     <!-- Defensive element of Section hidden if user is not logged in. -->
     {% if 'username' in session %}
-        <section id="edit-workout">
+        <section id="create-workout">
             <div class="container">
-                <div class="row workout-view-row">
-                    <div class="col-sm-12 text-center">
-                        <p class="page-help">Success</p>
+                <div class="row edit-workout-row">
+                    <div class="col-sm-12 edit-workout-form">
+                        <h2 class="edit-header text-center">Create Workout</h2>
+                        <form action="" method="POST">
+                            <!-- hidden_tag needed to protect against CSRF (cross-site request forgery) attacks in conjunction with our secret key. -->
+                            {{ form.hidden_tag() }}
+
+                            <div class="form-group">
+                                {{ form.focus_name.label(class="form-control-label") }}
+                                {{ form.focus_name(class="form-control", placeholder="Please select", required=True) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.location_name.label(class="form-control-label") }}
+                                {{ form.location_name(class="form-control", placeholder="Please select", required=True) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.part_a.label(class="form-control-label") }}
+                                {{ form.part_a(class="form-control", required=True) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.part_b.label(class="form-control-label") }}
+                                {{ form.part_b(class="form-control", required=True) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.part_c.label(class="form-control-label") }}
+                                {{ form.part_c(class="form-control", required=True) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.accessory.label(class="form-control-label") }}
+                                {{ form.accessory(class="form-control", required=False) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.additional_info.label(class="form-control-label") }}
+                                {{ form.additional_info(class="form-control", required=False) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.coach_notes.label(class="form-control-label") }}
+                                {{ form.coach_notes(class="form-control", required=False) }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.public_workout.label(class="form-control-label") }}
+                                {{ form.public_workout(class="form-control", required=False) }}
+                            </div>
+                            <div class="form-group text-center">
+                                {{ form.submit(class="btn btn-primary") }}
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
