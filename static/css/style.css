@@ -345,8 +345,13 @@ footer .row {
 }
 
 /* Login, Registration, Create Workout, Edit Workout & Delete Workout Forms ~ move to global */
+.login-form-row, .register-form-row,
+.create-workout-row, .delete-workout-row, .edit-workout-row {
+    justify-content: center;
+}
 
-.login-form, .register-form, .create-workout-form, .delete-workout-form {
+.login-form, .register-form, .create-workout-form,
+.delete-workout-form, .edit-workout-form {
     margin: 1rem;
     background: #ffffff;
     border: 1px solid rgba(0,0,0, 0.125);
@@ -356,7 +361,7 @@ footer .row {
 }
 
 .login-header:after, .register-header:after,
-.create-header:after, .delete-header:after {
+.create-header:after, .delete-header:after, .edit-header:after {
     content: '';
     display: block;
     height: 1px;
@@ -365,18 +370,13 @@ footer .row {
     background: #545479;
 }
 
-.login-form-row, .register-form-row,
-.create-workout-row, .delete-workout-row {
-    justify-content: center;
-}
-
 .form-control-label {
     font-family: "Maven Pro", sans-serif;
     font-style: italic;
     margin-bottom: 0;
 }
 
-.login-btn, .register-btn, .create-btn, .delete-btn {
+.login-btn, .register-btn, .create-btn, .delete-btn, .edit-btn {
     margin-top: 0.5rem;
 }
 
@@ -433,7 +433,7 @@ footer .row {
 
     /* Size constraint for application forms for larger devices */
     .login-form, .register-form,
-    .create-workout-form {
+    .create-workout-form, .edit-workout-form {
         max-width: 60%;
     }
 
