@@ -9,13 +9,17 @@
             </div>
             <div class="row">
                 <div class="col-sm-12 text-center">
-                    <p class="page-desc">Welcome {{ session['username'] }}, this page contains a list of all the workouts you have created! You will be
-                        able to record any details of your workout; from the movements done, rep ranges and weights hit and any coaching
-                        notes you got during the session. Overtime the hope will be that coaches use this option to
-                        create workouts tailored for that you can login to see here. Exciting Stuff!</p>
-                    <p class="page-help">Each card below contains some top level information for the session contained
-                        within. To see the full session information, hover over the card and click or tap to be brought
-                        to the full session view.</p>
+                    {% if 'username' in session %}
+                        <p class="page-desc">Welcome {{ session['username'] }}, this page contains a list of all the workouts you have created! You will be
+                            able to record any details of your workout; from the movements done, rep ranges and weights hit and any coaching
+                            notes you got during the session. Overtime the hope will be that coaches use this option to
+                            create workouts tailored for that you can login to see here. Exciting Stuff!</p>
+                        <p class="page-help">Each card below contains some top level information for the session contained
+                            within. To see the full session information, hover over the card and click or tap to be brought
+                            to the full session view.</p>
+                    {% else %}
+                        <p class="page-help">You are not logged in to view this page. Please Login.</p>
+                    {% endif %}
                 </div>
             </div>
             <div class="row">
