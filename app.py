@@ -50,9 +50,12 @@ def login():
                 session['username'] = request.form.get('username')
                 session['logged-in'] = True
                 return redirect(url_for('my_workouts'))
-            else:
-                flash(f'Username or Password incorrect. Please try again.', 'danger')
-                return redirect(url_for('login'))
+
+            flash(f'Password incorrect. Please try again.', 'danger')
+            return redirect(url_for('login'))
+
+        flash(f'Username not found. Please try again.', 'danger')
+        return redirect(url_for('login'))
 
     return render_template('login.html', title='Login', form=login_form)
 
