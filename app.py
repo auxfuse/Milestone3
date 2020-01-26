@@ -187,6 +187,11 @@ def delete_workout(workout_id):
     return render_template('delete-workout.html', workout=my_workout, form=delete_workout_form)
 
 
+@app.errorhandler(404)
+def handle_404(exception):
+    return render_template('404.html', exception=exception)
+
+
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP', '127.0.0.1'),
             port=os.environ.get('PORT', '5000'),

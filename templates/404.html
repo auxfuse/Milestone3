@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+    <section class="about">
+        <div class="container content login-detail">
+            <div class="row">
+                <div class="col-sm-12 about-title text-center">
+                    <h2>Damn......</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 404-desc text-center">
+                    <p class="page-help">Something went wrong, please use the navigation links to return to any of the pages previously
+                        visited. If this problem persists, please send an email detailing as much info as possible for
+                        this page to appear and we will get right on it.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                    <img class="img-fluid" src="{{ url_for('static', filename='images/oly-track-large-logo.png') }}"
+                         alt="Large Brand Logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="restricted-access"></div>
+{% endblock %}
