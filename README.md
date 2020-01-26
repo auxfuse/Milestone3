@@ -23,7 +23,11 @@ This Milestone project creation is the culmination of learning and study from th
 </p>
 
 ### Functionality of Project
-This application contains the key CRUD requirement functionality .
+This application contains the key CRUD requirement functionality and utilises a data handling document based database, MongoDB. The user functionality is created using Flask, HTML templates and CSS. One of the most prominent frontend frameworks was used in building the frontend interface structure, Bootstrap, and includes all the main attributable points of a modern day website/application such as a Navigation bar and Footer elements.
+
+The application also utilises a Registration and Login system to show clear seperation between documents created by each Registered user. These functions utilise creating and reading to the database along with password hashing to protect each individuals credentials. The project also caters for un-registered users as there is functionality for documents created by a registered user to set them public to be displayed in the application without a Login, aswell as a _Fundamentals_ page to assist the user in learning the technical aspects of the subject matter, Olympic Weightlifting. 
+
+The project is version controlled via Git & Github and is deployed via Heroku. All environment variables are held in a git ignored file and held _secret_ to ensure the project integrity is held to present day and project requirement standards.
 
 [Back to top](#table-of-contents)
 
@@ -293,11 +297,27 @@ Navigation to this page can only be instantiated by the user once they view ther
 
 ## Technology Used
 
-[Back to Top](#table-of-contents)
-
 #### Languages, Frameworks, Editors & Version Control:
 
+* HTML, CSS & Python ~ core languages used to create this multi-page CRUD application.
+* <a href="https://getbootstrap.com/"> Bootstrap Framework</a> ~ Used as the core structuring layout for the application, ensuring mobile-first design and screen size fluidity.
+* Bootstrap's <a href="https://getbootstrap.com/docs/4.3/getting-started/introduction/#js">Imported Javascript & JQuery</a> ~ For the Modal and Responsive Navbar expand & collapse functionality.
+* <a href="https://www.jetbrains.com/pycharm/">PyCharm IDE</a> ~ PyCharm was used as the preferred IDE for this project.
+* PyCharm built-in Terminal ~ Used to commit to local repository and further push to Github Repo ensuring adequate version
+controlling throughout the life-cycle of the project build.
+* <a href="https://git-scm.com/">Git</a> ~ Installed on local device and integrated to PyCharm as a Plugin to enable version controlling.
+* <a href="https://github.com/auxfuse/Milestone1">Github</a> ~ Used to host the repository of all previous versions of the build and linked to Heroku to push the latest changes to the deployed build version held there.
+* <a href="https://www.heroku.com/">Heroku</a> ~ A cloud platform as a service enabling deployment for this CRUD application.
+
 #### Tools Used:
+
+* <a href="https://mycolor.space/">ColorSpace</a> ~ Used to find complimentary color schemes used throughout the application.
+* <a href="http://eye-dropper.kepi.cz/">Eye Dropper (Color Picker)</a> ~ Open Source Google Chrome Extension used to obtain hexadecimal/rgba/hsl values of colours. Built by Kepi (<a href="https://github.com/kepi">Kepi's Github</a>)
+* Google Chrome DevTools ~ Used to test the application's functionality, the responsiveness of same, and the CSS visualisation, as well as assisting in such tasks as figuring out the correct style properties to override Bootstraps user agent styling.
+* <a href="https://balsamiq.com/">Balsamiq</a> ~ Used for the creation of my pre-build wireframes showing the main elements and differences in size of same through small to large screen sizes.
+* <a href="https://realfavicongenerator.net/">Favicon Generator</a> ~ Used to create favicon from custom Logo I created for the project.
+* <a href="https://validator.w3.org/">W3C HTML Validator</a> & <a href="https://validator.w3.org/">W3C CSS Validator</a> & <a href="https://jshint.com/">JSHint</a> ~ Used to check the validity and efficiency of my code.
+* <a href="https://autoprefixer.github.io/">Autoprefixer CSS Online</a> ~ Used to check for possible webkits required in the applications stylesheet ensuring Cross-browser support.
 
 ## Features
 
@@ -314,7 +334,7 @@ Navigation to this page can only be instantiated by the user once they view ther
 During manual testing of the application by one of my peers in Slack, it was brought to my attention that the cards on the Fundamentals page were offsetting to left on their mobile device, Samsung Galaxy S9+. As I had access to a Samsung Galaxy S9, I tested the same view on that device and the visual offset was not present. By creating a custom devtools Emulated Device for a Samsung Galaxy S9+ it allowed me to see the visual bug in my manual testing. See next image of the same issue also happening on the Pixel 2 device.
 
 <p align="center">
-    <img src="https://github.com/auxfuse/Milestone3/blob/master/static/images/card-offset.PNG" alt="Oly-Track Logo">
+    <img height="350" src="https://github.com/auxfuse/Milestone3/blob/master/static/images/card-offset.PNG" alt="Oly-Track Logo">
 </p>
 
 Using devtools and some basic element debugging, I was able to determine that the hard-coded `max-width` style property on the card class in my CSS file was the culprit. It wasn't causing any sizing or positional problems on device widths greater than 574px. So instead of removing the max-width property entirely from the CSS file, I decided it was best to remove it from the card class in the main portion of my CSS and add it to a media query from 575px and up device widths:
@@ -336,6 +356,18 @@ Using devtools and some basic element debugging, I was able to determine that th
 [Back to Top](#table-of-contents)
 
 ## Credits
+
+Hashing passwords using Bcrypt credit to Corey Schafer tutorial on Youtube
+, https://www.youtube.com/watch?v=CSHx6eCkmv0&list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH&index=7&t=1674s
+
+(Credit to Tim_CI tutor for assisting in fixing my error:
+    'https://code-institute-room.slack.com/archives/C7JQY2RHC
+    /p1579969487145000?thread_ts=1579965191.134700&cid=C7JQY2RHC' where I needed to add the location dropdown values aswell as the focus dropdown values.
+    
+    Credit to Edel O' Sullivan for assisting my query in slack and
+    pointing me in the right durection to use 'find_one_or_404' method.
+    https://code-institute-room.slack.com/archives/C7JQY2RHC/p1580035505186300 &
+    https://code-institute-room.slack.com/archives/C7JQY2RHC/p1580035823189800
 
 [Back to Top](#table-of-contents)
 
