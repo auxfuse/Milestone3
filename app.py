@@ -25,21 +25,27 @@ get_workouts = mongo.db.workouts
 @app.route('/')
 @app.route('/index')
 def index():
+    """Landing page render"""
     return render_template('index.html')
 
 
 @app.route('/fundamentals')
 def show_fundamentals():
+    """Show user fundamentals from MongoDB documents stored in 'fundamental_movements' db."""
     return render_template('fundamentals.html', fundamentals=mongo.db.fundamental_movements.find())
 
 
 @app.route('/public-workouts')
 def show_public_workouts():
+    """Show workout documents that have the public_workout key value set to true on workout creation by logged in
+    user, by utilising if statements in the 'public-workouts.html' to check for the value in a for loop."""
     return render_template('public-workouts.html', workouts=mongo.db.workouts.find())
 
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    """User Login. If Username not found in MongoDB db 'users', flash message and redirect user to
+    try again on Login page. If password entered incorrect, flash relevant message and redirect to Login."""
     login_form = LoginForm()
 
     if login_form.validate_on_submit():
@@ -62,6 +68,11 @@ def login():
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
+    """User Registration. If Username is not taken and stored in MongoDB db 'users'.
+    Hashing passwords using Bcrypt credit to Corey Schafer tutorial on Youtube
+    https://www.youtube.com/watch?v=CSHx6eCkmv0&list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH&index=7&t=1674s
+    Learning aspects altered to suit this application. If username is already taken message flashed
+    to user detailing same."""
     register_form = RegisterForm()
 
     if register_form.validate_on_submit():
@@ -83,6 +94,7 @@ def register():
 
 @app.route('/logout')
 def logout():
+    """Logout user by clearing the session cache & redirect with flash message to index."""
     session.clear()
     flash(f'Thank you for using Oly-Track. See you soon.', 'primary')
     return redirect(url_for('index'))
@@ -90,6 +102,12 @@ def logout():
 
 @app.route('/create-workout', methods=['GET', 'POST'])
 def create_workout():
+    """Allow logged in user to create workout. Username auto-populated on creation based on session['username']
+    value. Date is auto-populated on creation and stored as date in MongoDB Collection db 'workouts'.
+    Location and Focus fields are dropdowns and values therein are set via db variables below. (Credit to Tim_CI
+    tutor for assisting in fixing my error:
+    https://code-institute-room.slack.com/archives/C7JQY2RHC/p1579969487145000?thread_ts=1579965191.134700&cid=C7JQY2RHC
+    where I needed to add the location dropdown values aswell as the focus dropdown values."""
     create_workout_form = CreateWorkoutForm()
 
     if request.method == 'POST':
@@ -109,6 +127,7 @@ def create_workout():
         flash(f'Workout added.', 'primary')
         return redirect(url_for('my_workouts', title='Workout Added'))
 
+    # Show dropdown values from collection databases for focus_type & location_name
     focus_type = mongo.db.focus_type.distinct('focus_name')
     create_workout_form.focus_name.choices = [('', 'Please select')] + [(focus, focus) for focus in focus_type]
     location_type = mongo.db.location.distinct('location_name')
@@ -119,17 +138,23 @@ def create_workout():
 
 @app.route('/my-workouts')
 def my_workouts():
+    """View list of workouts ~ only show workouts owned by logged in user via statement on template my-workouts.html"""
     return render_template('my-workouts.html', workouts=mongo.db.workouts.find())
 
 
 @app.route('/workout-view/<workout_id>')
 def workout_view(workout_id):
+    """View specific workout details full view"""
     my_workout = get_workouts.find_one({'_id': ObjectId(workout_id)})
     return render_template('workout-view.html', workout=my_workout)
 
 
 @app.route('/edit-workout/<workout_id>', methods=['GET', 'POST'])
 def edit_workout(workout_id):
+    """Function to post existing workout form and allow user to edit data therein. Credit to Edel O' Sullivan
+    for assisting my query in slack and pointing me in the right durection to use 'find_one_or_404' method.
+    https://code-institute-room.slack.com/archives/C7JQY2RHC/p1580035505186300 &
+    https://code-institute-room.slack.com/archives/C7JQY2RHC/p1580035823189800"""
     edit_workout_form = EditWorkoutForm()
     workout = get_workouts.find_one_or_404({'_id': ObjectId(workout_id)})
     # Show dropdown values from collection databases for focus_type & location_name
@@ -154,6 +179,7 @@ def edit_workout(workout_id):
                                      }})
         flash(f'Workout updated', 'primary')
         return redirect(url_for('my_workouts', title='Workout updated'))
+    # When navigating into /edit_workout/<workout_id> we set the form elements to values set when document created
     elif request.method == 'GET':
         edit_workout_form.location_name.data = workout['location_name']
         edit_workout_form.focus_name.data = workout['focus_name']
@@ -173,6 +199,7 @@ def edit_workout(workout_id):
 
 @app.route('/delete-workout/<workout_id>', methods=['GET', 'POST'])
 def delete_workout(workout_id):
+    """Allow logged in user to delete workout document they own"""
     my_workout = get_workouts.find_one({'_id': ObjectId(workout_id)})
 
     delete_workout_form = DeleteForm()
