@@ -22,10 +22,15 @@ users = mongo.db.users
 get_workouts = mongo.db.workouts
 
 
+class RaiseException:
+    raise Exception("this is a test")
+
+
 @app.route('/')
 @app.route('/index')
 def index():
     return render_template('index.html')
+
 
 
 @app.route('/fundamentals')
@@ -198,6 +203,13 @@ def response_404(exception):
 def response_500(exception):
     """When 500 is captured display custom 500.html page"""
     return render_template('500.html', exception=exception)
+
+
+def error():
+    RaiseException()
+
+
+error()
 
 
 if __name__ == '__main__':
