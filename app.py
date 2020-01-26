@@ -187,10 +187,17 @@ def delete_workout(workout_id):
     return render_template('delete-workout.html', workout=my_workout, form=delete_workout_form)
 
 
+# Error Handling of 404 & 500
 @app.errorhandler(404)
 def response_404(exception):
     """When 404 is captured display custom 404.html page"""
     return render_template('404.html', exception=exception)
+
+
+@app.errorhandler(500)
+def response_500(exception):
+    """When 500 is captured display custom 500.html page"""
+    return render_template('500.html', exception=exception)
 
 
 if __name__ == '__main__':
