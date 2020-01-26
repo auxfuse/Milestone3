@@ -23,7 +23,7 @@ This Milestone project creation is the culmination of learning and study from th
 </p>
 
 ### Functionality of Project
-
+This application contains the key CRUD requirement functionality .
 
 [Back to top](#table-of-contents)
 
