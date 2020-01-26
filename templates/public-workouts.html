@@ -31,6 +31,7 @@
     <section class="lower-section">
         <div class="container">
             <div class="row public-cards-row">
+                <!-- Render workouts that have boolean attribute of public set to true. -->
                 {% for workout in workouts %}
                     {% if workout.public_workout == true %}
                         <div class="col-sm-12 col-md-6 public-cards card">

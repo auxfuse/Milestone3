@@ -31,11 +31,12 @@
         </div>
     </section>
 
-    <!-- Defensive element of Section hidden if user is not logged in. -->
+    <!-- Defensive element of Section - hidden if user is not logged in. -->
     {% if 'username' in session %}
         <section class="lower-section">
             <div class="container">
                 <div class="row custom-form-row">
+                    <!-- Display workout details to user for review. -->
                     <div class="col-sm-12 workout-view-card card">
                         <div class="card-body workout-card-body text-center">
                             <h5 class="card-title wcb-title">Detail</h5>
@@ -73,6 +74,7 @@
                             {{ form.hidden_tag() }}
 
                             <div class="form-group">
+                                <!-- Form control input to capture username -->
                                 {{ form.username(class="form-control del-confirm-username", placeholder="Type username to confirm", required=false) }}
                             </div>
                             <div class="form-group text-center">

@@ -48,6 +48,7 @@
     <section class="lower-section">
         <div class="container">
             <div class="row public-cards-row">
+                <!-- Render available workout records if mine from workouts db -->
                 {% for workout in workouts %}
                     {% if workout.username == session['username'] %}
                         <div class="col-sm-12 col-md-6 public-cards card">

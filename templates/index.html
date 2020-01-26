@@ -84,6 +84,7 @@
                 <div class="card home-card-actions col-md-12 col-lg-4">
                     <div class="card-body text-center">
                         <!-- Change Card information and call to action depending on user login status. -->
+                        <!-- If not logged in, card to display Login, otherwise show Logout. -->
                         {% if 'username' in session %}
                             <h5 class="card-title hca-title">Logout</h5>
                             <p class="card-text">Thank you for using Oly-Track!. It takes a lot to put your faith in a
@@ -98,8 +99,7 @@
                                 logging in.</p>
                             <p class="card-text hca-p2">When filling out a session form, you have the option to keep
                                 them private or make them public. Take control of your day-to-day sessions and in time
-                                it
-                                will become 2nd nature to login.</p>
+                                it will become 2nd nature to login.</p>
                             <a href="{{ url_for('login') }}" class="btn btn-primary">Login</a>
                         {% endif %}
                     </div>

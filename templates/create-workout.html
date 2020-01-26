@@ -34,7 +34,7 @@
         </div>
     </section>
 
-    <!-- Defensive element of Section hidden if user is not logged in. -->
+    <!-- Defensive element of Section - hidden if user is not logged in. -->
     {% if 'username' in session %}
         <section class="lower-section">
             <div class="container">
@@ -45,6 +45,7 @@
                             <!-- hidden_tag needed to protect against CSRF (cross-site request forgery) attacks in conjunction with our secret key. -->
                             {{ form.hidden_tag() }}
 
+                            <!-- Form elements to create workout -->
                             <div class="form-group">
                                 {{ form.focus_name.label(class="form-control-label") }}
                                 {{ form.focus_name(class="form-control", placeholder="Please select", required=True) }}
