@@ -32,7 +32,7 @@
 ***
 
 ## What does it do and what does it need to fulfill?
-This Milestone project creation is the culmination of learning and study from the eight, ninth and tenth modules of the Full Stack Developer Course, Python Fundamentals, Practical Python and Data Centric Development, to create a fully Mobile Responsive CRUD Web Application. This Application will allow a user to create, read, update and delete Olympic Weightlifting Sessions and is called "Oly-Track".
+This Milestone project creation is the culmination of learning and study from the eight, ninth and tenth modules of the Full Stack Developer Course, Python Fundamentals, Practical Python and Data Centric Development, to create a fully Mobile Responsive CRUD Web Application. This Application will allow a user to create, read, update and delete Olympic Weightlifting Sessions and is called <a href="https://oly-track.herokuapp.com">Oly-Track</a>.
 
 <p align="center">
     <img src="https://github.com/auxfuse/Milestone3/blob/master/static/images/oly-track-short-logo.png" alt="Oly-Track Favicon">
@@ -366,9 +366,9 @@ The project boasts several key features:
 
 Testing was done throughout the application build and when build was finished. The application structure and mobile-first layout was tested on Google Chrome, Opera, Microsoft Edge and Safari. As well as most of my testing taking place manually on my PC for which the build also took place, Chrome Devtools was used constantly to test on as many devices as possible from Android Samsung & Huawei device dimensions to Apple phones & tablet dimensions, and of course laptop and above sizes. The application was tested constantly on two at-hand smartphone devices throughout the build at home, a Hauwei P20 Pro and a Samsung Galaxy S9 aswell as a Samsung Tab2 Tablet.
 
-Mongo Explorer, (the PyCharm Plugin for MongoDB) was used in conjunction with the built-in PyCharm terminal and the Werkzeug Online Debugger were used to test the Create, Locate, Read, Update and Delete Functionality. 
+Mongo Explorer, (the PyCharm Plugin for MongoDB) was used in conjunction with the built-in PyCharm terminal and the Werkzeug Online Debugger to test the Create, Locate, Read, Update and Delete Functionality. 
 
-If a bug arose during testing it was dealt with during the development of the build.
+If a bug arose during testing it was dealt with during the development of the build and the fix pushed to the repository for the latest changes to take affect on the deployed application via automatic build & deploy function set up in Heroku.
 
 #### Found Bugs and Fixes:
 
@@ -403,10 +403,11 @@ Defensive design for this application was built into each template as well as wh
 
 This multi-page application was developed in PyCharm IDE and version controlling was utilised via local (git) and online (github) repository technologies. Several github branches were used throughout the development of this application as it allowed me a learning process with same, I have left those branches available in the Github branches tab of my <a href="https://github.com/auxfuse/Milestone3">repository</a>
 
-Deploying this application was achieved through Github pages and hosted on Heroku by:
-* Selecting the Repository from my linked Github in Heroku.
-* And setting up auto build from most recent commit history.
-"https://oly-track.herokuapp.com/".
+Deploying this application was achieved by:
+* Pushing the code from my IDE to Github via Git and the built-in PyCharm terminal.
+* Creating an app on Heroku & deploying it from same.
+* In Heroku 'Deploy tab', deployment method was set to Github with automatic deploys set from the master branch.
+* Once the above was done, the app was deployed via this link: "https://oly-track.herokuapp.com/".
 
 To clone the repository:
 * Select the Repository from the Github Dashboard.
