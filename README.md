@@ -2,8 +2,24 @@
 ***
 
 ## Table of Contents:
-* [section link](link here)
-    * [sub-section link](link here)
+* [What does it do and what does it need to fulfill?](#what-does-it-do-and-what-does-it-need-to-fulfill)
+* [Functionality of Project](#functionality-of-project)
+* [User Experience](#user-experience)
+    * [User Stories](#user-stories)
+    * [Design](#design)
+        * [1. Font](#1-font)
+        * [2. Color Scheme](#2-color-scheme)
+        * [3. Logo](#3-logo)
+        * [4. Geometry](#4-geometry)
+        * [5. Wireframing](#5-wireframing)
+* [Technology Used](#technology-used)
+* [Features](#features)
+    * [Future Features](#future-features)
+* [Testing](#testing)
+    * [Defensive Design](#defensive-design)
+* [Deployment](#deployment)
+* [Credits](#credits)
+    * [Special Thanks & Acknowledgements](#special-thanks--acknowledgements)
 
 ***
 
@@ -311,6 +327,8 @@ controlling throughout the life-cycle of the project build.
 
 #### Tools Used:
 
+* <a href="https://www.mongodb.com/cloud/atlas">MongoDB Atlas</a> ~ Non-relational database hosting service used.
+* <a href="https://plugins.jetbrains.com/plugin/7141-mongo-plugin/versions">PyCharm Plugin Mongo Explorer</a> ~ Used to track changes to the database from my IDE instead of using the MongoDB website in the browser.
 * <a href="https://mycolor.space/">ColorSpace</a> ~ Used to find complimentary color schemes used throughout the application.
 * <a href="http://eye-dropper.kepi.cz/">Eye Dropper (Color Picker)</a> ~ Open Source Google Chrome Extension used to obtain hexadecimal/rgba/hsl values of colours. Built by Kepi (<a href="https://github.com/kepi">Kepi's Github</a>)
 * Google Chrome DevTools ~ Used to test the application's functionality, the responsiveness of same, and the CSS visualisation, as well as assisting in such tasks as figuring out the correct style properties to override Bootstraps user agent styling.
@@ -318,16 +336,36 @@ controlling throughout the life-cycle of the project build.
 * <a href="https://realfavicongenerator.net/">Favicon Generator</a> ~ Used to create favicon from custom Logo I created for the project.
 * <a href="https://validator.w3.org/">W3C HTML Validator</a> & <a href="https://validator.w3.org/">W3C CSS Validator</a> & <a href="https://jshint.com/">JSHint</a> ~ Used to check the validity and efficiency of my code.
 * <a href="https://autoprefixer.github.io/">Autoprefixer CSS Online</a> ~ Used to check for possible webkits required in the applications stylesheet ensuring Cross-browser support.
+* <a href="http://pep8online.com/">PEP 8 Online Validator</a> ~ to check my python code to be consistent with PEP8 requirements.
+* Adobe Photoshop ~ to create the custom long and short variations of the Logo for this application.
+
 
 ## Features
+
+The project boasts several key features:
+* Create: Several instances of create functionality as per CRUD, via the Registration form creating a new user in the database and a Logged in user being able to create a new Workout via the create form.
+* Read: Is implemented throughout the site from showing an un-logged user the fundamentals and such workouts deemed public by a logged in user to the filtered by personal login 'My workouts' lists.
+* Update: Present for a logged in user in their own documents to update same and push back to the database.
+* Delete: Present for a logged in user in their own documents to delete with confirmation from the database.
+* Locate: Functionality instanced in checking a username is on the database via Login.
+* Basic email functionality via html mailto attribute and assigned to a social icon in the Footer.
 
 [Back to Top](#table-of-contents)
 
 #### Future Features:
 
-#### Removed Features:
+* Swap never ending gifs on each fundamental card to only play on user click or use an icon overlay to simulate play/pause affect.
+* Email functionality via SMTP server instead of using basic HTML href mailto attribute value.
+* Search functionality to search by multiple features such as Date, Location, Focus type etc on both public and bespoke user lists of workouts.
+* Pagination on both public and bespoke user lists of workouts, unfortunately due to time constraints this will be have to be implemented once the project has come back from grading.
+* Coach login to create workouts for other individual users based on access control levels.
+* Admin login to manage collection database records such as location names & focus types from the application instead of via the PyCharm plugin Mongo Explorer or the MongoDB Atlas Dashboard.
 
 ## Testing
+
+Testing was done throughout the application build and when build was finished. The application structure and mobile-first layout was tested on Google Chrome, Opera, Microsoft Edge and Safari. As well as most of my testing taking place manually on my PC for which the build also took place, Chrome Devtools was used constantly to test on as many devices as possible from Android Samsung & Huawei device dimensions to Apple phones & tablet dimensions, and of course laptop and above sizes. The application was tested constantly on two at-hand smartphone devices throughout the build at home, a Hauwei P20 Pro and a Samsung Galaxy S9 aswell as a Samsung Tab2 Tablet.
+
+Mongo Explorer, (the PyCharm Plugin for MongoDB) was used in conjunction with the built-in PyCharm terminal and the Werkzeug Online Debugger were used to test the Create, Locate, Read, Update and Delete Functionality. 
 
 #### Found Bugs and Fixes:
 
@@ -351,27 +389,47 @@ Using devtools and some basic element debugging, I was able to determine that th
 
 ##### Defensive Design
 
+Defensive design for this application was built into each template as well as where appropriate each function in app.py file.
+ * A registration system posting the user's accepted details to the collection users in the database.
+ * A login system to allow the user to login and thus have access to Create documents or Update and Delete only those documents that they have created previously.
+ * Constant checks for if user is logged in where applicable in the app.py file and html templates, such as differing Nav-items shown depending on login status.
+ * Protection was built into each template not applicable to an un-logged user in the form of 'if logged in' validation aswell as hiding appropriate section in case of Browser URL hardcoding.
+ * Custom multiple flash warnings produced depending on info entered into certain forms, for example if a user entered an already taken username on registration.
+
 ## Deployment
+
+This multi-page application was developed in PyCharm IDE and version controlling was utilised via local (git) and online (github) repository technologies.
+
+Deploying this application was achieved through Github pages and hosted on Heroku by:
+* Selecting the Repository from my linked Github in Heroku.
+* And setting up auto build from most recent commit history.
+"https://oly-track.herokuapp.com/".
+
+To clone the repository:
+* Select the Repository from the Github Dashboard.
+* Click on the "Clone or download" green button located above and to the right of the File Structure table.
+* Click on the "clipboard icon" to the right of the Git URL to copy the web URL of the Clone.
+* Open your preferred Integrated Development Environment (IDE) and navigate to the terminal window.
+* Change the directory to where you want to clone the repository too. (In the case of PyCharm the directory path can be found through the "Navigate" tab).
+* Paste the Git URL copied from above and click "Ok". (Again in the case of PyCharm once you click "clone", Git Root mapping will be automatically set to the project Root directory).
 
 [Back to Top](#table-of-contents)
 
 ## Credits
 
-Hashing passwords using Bcrypt credit to Corey Schafer tutorial on Youtube
-, https://www.youtube.com/watch?v=CSHx6eCkmv0&list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH&index=7&t=1674s
+* Hashing passwords using Bcrypt credit to Corey Schafer <a href="https://www.youtube.com/watch?v=CSHx6eCkmv0&list=PL-osiE80TeTs4UjLw5MM6OjgkjFeUxCYH&index=7&t=1674s">tutorial</a> on Youtube.
 
-(Credit to Tim_CI tutor for assisting in fixing my error:
-    'https://code-institute-room.slack.com/archives/C7JQY2RHC
-    /p1579969487145000?thread_ts=1579965191.134700&cid=C7JQY2RHC' where I needed to add the location dropdown values aswell as the focus dropdown values.
-    
-    Credit to Edel O' Sullivan for assisting my query in slack and
-    pointing me in the right durection to use 'find_one_or_404' method.
-    https://code-institute-room.slack.com/archives/C7JQY2RHC/p1580035505186300 &
-    https://code-institute-room.slack.com/archives/C7JQY2RHC/p1580035823189800
+* Dropdown population assisted by <a href="https://github.com/TravelTimN">Tim_CI</a> via <a href="https://code-institute-room.slack.com/archives/C7JQY2RHC/p1579969487145000?thread_ts=1579965191.134700&cid=C7JQY2RHC">Slack</a>.
+
+* Edit form population assistance by <a href="https://github.com/coderbeez">Edel O' Sullivan</a> via Slack posts <a href="https://code-institute-room.slack.com/archives/C7JQY2RHC/p1580035505186300">#1</a> & <a href="https://code-institute-room.slack.com/archives/C7JQY2RHC/p1580035823189800">#2</a>.
+
+* 
 
 [Back to Top](#table-of-contents)
 
 #### Special Thanks & Acknowledgements:
+
+* Those in Slack, Tutor Support and my Mentor Spencer Barriball for assisting with me with countless queries since starting on my Python Fundamentals journey until now.
 
 ###### <i>Disclaimer: This project was created for educational use only as part of the Code Institute Full Stack Software Development Course for Milestone 3 Grading!</i>
 

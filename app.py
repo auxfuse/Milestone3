@@ -119,8 +119,8 @@ def create_workout():
     on creation and stored as date in MongoDB Collection db 'workouts'.
     Location and Focus fields are dropdowns and values therein are set via db
     variables below. Credit to Tim_CI tutor for assisting in fixing my
-    error: where I needed to add the location dropdown values aswell as the focus
-    dropdown values. (link in README)"""
+    error: where I needed to add the location dropdown values alongside the
+    focus dropdown values. (link in README)"""
     create_workout_form = CreateWorkoutForm()
 
     if request.method == 'POST':
