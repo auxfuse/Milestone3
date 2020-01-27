@@ -354,7 +354,7 @@ The project boasts several key features:
 
 #### Future Features:
 
-* Swap never ending gifs on each fundamental card to only play on user click or use an icon overlay to simulate play/pause affect.
+* Swap always-playing gifs on each fundamental card to only play on user click or use an icon overlay to simulate play/pause affect.
 * Email functionality via SMTP server instead of using basic HTML href mailto attribute value.
 * Search functionality to search by multiple features such as Date, Location, Focus type etc on both public and bespoke user lists of workouts.
 * Pagination on both public and bespoke user lists of workouts, unfortunately due to time constraints this will be have to be implemented once the project has come back from grading.
@@ -366,6 +366,8 @@ The project boasts several key features:
 Testing was done throughout the application build and when build was finished. The application structure and mobile-first layout was tested on Google Chrome, Opera, Microsoft Edge and Safari. As well as most of my testing taking place manually on my PC for which the build also took place, Chrome Devtools was used constantly to test on as many devices as possible from Android Samsung & Huawei device dimensions to Apple phones & tablet dimensions, and of course laptop and above sizes. The application was tested constantly on two at-hand smartphone devices throughout the build at home, a Hauwei P20 Pro and a Samsung Galaxy S9 aswell as a Samsung Tab2 Tablet.
 
 Mongo Explorer, (the PyCharm Plugin for MongoDB) was used in conjunction with the built-in PyCharm terminal and the Werkzeug Online Debugger were used to test the Create, Locate, Read, Update and Delete Functionality. 
+
+If a bug arose during testing it was dealt with during the development of the build.
 
 #### Found Bugs and Fixes:
 
@@ -398,7 +400,7 @@ Defensive design for this application was built into each template as well as wh
 
 ## Deployment
 
-This multi-page application was developed in PyCharm IDE and version controlling was utilised via local (git) and online (github) repository technologies.
+This multi-page application was developed in PyCharm IDE and version controlling was utilised via local (git) and online (github) repository technologies. Several github branches were used throughout the development of this application as it allowed me a learning process with same, I have left those branches available in the Github branches tab of my <a href="https://github.com/auxfuse/Milestone3">repository</a>
 
 Deploying this application was achieved through Github pages and hosted on Heroku by:
 * Selecting the Repository from my linked Github in Heroku.
