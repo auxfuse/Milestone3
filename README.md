@@ -338,7 +338,7 @@ controlling throughout the life-cycle of the project build.
 * <a href="https://autoprefixer.github.io/">Autoprefixer CSS Online</a> ~ Used to check for possible webkits required in the applications stylesheet ensuring Cross-browser support.
 * <a href="http://pep8online.com/">PEP 8 Online Validator</a> ~ to check my python code to be consistent with PEP8 requirements.
 * Adobe Photoshop ~ to create the custom long and short variations of the Logo for this application.
-
+* <a href="https://fontawesome.com/icons?d=gallery">Font Awesome Icons</a> ~ For social icons used in Footer.
 
 ## Features
 
@@ -349,6 +349,7 @@ The project boasts several key features:
 * Delete: Present for a logged in user in their own documents to delete with confirmation from the database.
 * Locate: Functionality instanced in checking a username is on the database via Login.
 * Basic email functionality via html mailto attribute and assigned to a social icon in the Footer.
+* Custom themed and styled browser scrollbar, (does not work in Microsoft Edge)
 
 [Back to Top](#table-of-contents)
 
@@ -425,7 +426,15 @@ To clone the repository:
 
 * Edit form population assistance by <a href="https://github.com/coderbeez">Edel O' Sullivan</a> via Slack posts <a href="https://code-institute-room.slack.com/archives/C7JQY2RHC/p1580035505186300">#1</a> & <a href="https://code-institute-room.slack.com/archives/C7JQY2RHC/p1580035823189800">#2</a>.
 
-* 
+* Creating custom 404 & 500 pages from <a href="https://flask.palletsprojects.com/en/1.1.x/patterns/errorpages/?highlight=error">Flask Documentation</a>
+
+* Git branch creation and merging <a href="https://stackabuse.com/git-merge-branch-into-master/">same</a> from this blogpost.
+
+* How to format python datetime.utcnow() using <a href="https://stackoverflow.com/questions/25406565/format-datetime-utcnow-time">strft</a> from Stackoverflow.
+
+* Custom styling browser <a href="https://css-tricks.com/the-current-state-of-styling-scrollbars/">scrollbars & elements</a> from this blogpost.
+
+* Gifs for each Fundamental movement <a href="https://www.smai.com.au/blogs/news/6-power-lifting-movements">media</a> obtained from this website and using right click to open image in new tab and getting the link from browser url bar.
 
 [Back to Top](#table-of-contents)
 
